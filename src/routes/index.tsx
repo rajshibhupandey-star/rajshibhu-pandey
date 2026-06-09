@@ -135,7 +135,7 @@ function Portfolio() {
           style={{ background: "var(--gradient-overlay)" }}
         />
         <div className="relative z-10 h-full flex flex-col items-center justify-end pb-28 px-6 text-center">
-          <h1 className="text-white text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg animate-fade-up">
+          <h1 className="font-display text-cream text-6xl md:text-8xl lg:text-9xl uppercase tracking-tight drop-shadow-2xl animate-fade-up leading-[0.9]">
             Rajshibhu Pandey
           </h1>
           <div className="mt-5 h-8 flex items-center justify-center">
