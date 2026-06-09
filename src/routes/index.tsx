@@ -135,7 +135,7 @@ function Portfolio() {
           style={{ background: "var(--gradient-overlay)" }}
         />
         <div className="relative z-10 h-full flex flex-col items-center justify-end pb-28 px-6 text-center">
-          <h1 className="text-white text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg animate-fade-up">
+          <h1 className="font-display text-cream text-6xl md:text-8xl lg:text-9xl uppercase tracking-tight drop-shadow-2xl animate-fade-up leading-[0.9]">
             Rajshibhu Pandey
           </h1>
           <div className="mt-5 h-8 flex items-center justify-center">
@@ -342,7 +342,7 @@ function Section({
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="mb-12 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blueprint">{eyebrow}</p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary text-balance">{title}</h2>
+          <h2 className="mt-3 font-display text-4xl md:text-6xl uppercase text-cream text-balance">{title}</h2>
         </div>
         {children}
       </div>
