@@ -342,7 +342,7 @@ function Section({
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="mb-12 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blueprint">{eyebrow}</p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-primary text-balance">{title}</h2>
+          <h2 className="mt-3 font-display text-4xl md:text-6xl uppercase text-cream text-balance">{title}</h2>
         </div>
         {children}
       </div>
