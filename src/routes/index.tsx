@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X, Mail, Linkedin, Github } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import p1 from "@/assets/photos/img_8818.jpeg.asset.json";
+import p2 from "@/assets/photos/img_7501.jpg.asset.json";
+import p3 from "@/assets/photos/img_7196.jpg.asset.json";
+import p4 from "@/assets/photos/img_7037.jpg.asset.json";
+import p5 from "@/assets/photos/img_5121.jpg.asset.json";
+import p6 from "@/assets/photos/img_4999.jpg.asset.json";
+import p7 from "@/assets/photos/img_4201.jpeg.asset.json";
+import p8 from "@/assets/photos/img_0776.jpeg.asset.json";
+
+const HERO_PHOTOS = [p1, p2, p3, p4, p5, p6, p7, p8];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,13 +24,10 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
-  { id: "research", label: "Research" },
-  { id: "academics", label: "Academics" },
+  { id: "research", label: "Projects" },
   { id: "leadership", label: "Leadership" },
   { id: "experience", label: "Professional Experience" },
-  { id: "hobbies", label: "Hobbies" },
-  { id: "volunteer", label: "Volunteer" },
+  { id: "volunteer", label: "Volunteering" },
 ];
 
 const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Volunteer", "Sailor"];
@@ -40,6 +46,7 @@ function Portfolio() {
   const [navOpen, setNavOpen] = useState(false);
   const [nounIdx, setNounIdx] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [photoIdx, setPhotoIdx] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -54,8 +61,15 @@ function Portfolio() {
       setTimeout(() => {
         setNounIdx((i) => (i + 1) % NOUNS.length);
         setVisible(true);
-      }, 350);
-    }, 3000);
+      }, 250);
+    }, 2000);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setPhotoIdx((i) => (i + 1) % HERO_PHOTOS.length);
+    }, 4500);
     return () => clearInterval(t);
   }, []);
 
@@ -123,34 +137,37 @@ function Portfolio() {
 
       {/* HERO */}
       <section id="home" className="relative h-screen w-full overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Rajshibhu Pandey portrait"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        {HERO_PHOTOS.map((p, i) => (
+          <img
+            key={p.url}
+            src={p.url}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${
+              i === photoIdx ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         <div
           className="absolute inset-0"
           style={{ background: "var(--gradient-overlay)" }}
         />
-        <div className="relative z-10 h-full flex flex-col items-center justify-end pb-28 px-6 text-center">
-          <h1 className="font-display text-cream text-6xl md:text-8xl lg:text-9xl uppercase tracking-tight drop-shadow-2xl animate-fade-up leading-[0.9]">
+        <div className="relative z-10 h-full flex flex-col items-start justify-end pb-28 px-6 lg:px-10 max-w-7xl mx-auto w-full">
+          <h1 className="font-display text-cream text-4xl md:text-6xl lg:text-7xl uppercase tracking-tight drop-shadow-2xl animate-fade-up leading-[0.95] whitespace-nowrap">
             Rajshibhu Pandey
           </h1>
-          <div className="mt-5 h-8 flex items-center justify-center">
+          <div className="mt-4 h-10 flex items-center">
             <span
-              className={`text-lg md:text-2xl font-medium text-white/95 transition-all duration-300 ${
+              className={`text-2xl md:text-3xl font-sans font-light tracking-wide text-white/95 transition-all duration-300 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
               }`}
-              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)", fontFamily: '"Space Grotesk", sans-serif' }}
             >
               {NOUNS[nounIdx]}
             </span>
           </div>
         </div>
         <button
-          onClick={() => scrollTo("about")}
+          onClick={() => scrollTo("research")}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white animate-bounce-down"
           aria-label="Scroll down"
         >
