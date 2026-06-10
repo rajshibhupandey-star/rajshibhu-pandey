@@ -32,8 +32,9 @@
   --color-blueprint: var(--blueprint);
   --color-cream: var(--cream);
   --color-surface: var(--surface);
-  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Archivo Black", "Archivo", "Space Grotesk", sans-serif;
+  --font-mono: "Space Grotesk", "JetBrains Mono", monospace;
 }
 
 :root {
