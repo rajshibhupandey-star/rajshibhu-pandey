@@ -387,17 +387,7 @@ function Portfolio() {
       <Section id="about" eyebrow="01 / About" title="About Me">
         <div className="grid md:grid-cols-5 gap-10 items-start">
           <div className="md:col-span-3 space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              I am a Mechanical Engineering student at the University of Florida interested in the
-              intersection of sustainability, human-centered design, and engineering. I am currently
-              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
-            </p>
-            <p>
-              Throughout my time at UF I have undertaken several opportunities that have allowed me
-              to enhance my leadership and communication skills. I am also passionate about sales and
-              want to explore technical sales in the future.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-3">
               <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border border-border hover:border-blueprint hover:text-blueprint transition-colors">
                 <Linkedin size={16} /> LinkedIn
@@ -411,6 +401,16 @@ function Portfolio() {
                 <Mail size={16} /> {EMAIL}
               </a>
             </div>
+            <p>
+              I am a Mechanical Engineering student at the University of Florida interested in the
+              intersection of sustainability, human-centered design, and engineering. I am currently
+              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
+            </p>
+            <p>
+              Throughout my time at UF I have undertaken several opportunities that have allowed me
+              to enhance my leadership and communication skills. I am also passionate about sales and
+              want to explore technical sales in the future.
+            </p>
           </div>
           <aside className="md:col-span-2 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">At a glance</h3>
