@@ -46,6 +46,7 @@ function Portfolio() {
   const [navOpen, setNavOpen] = useState(false);
   const [nounIdx, setNounIdx] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [photoIdx, setPhotoIdx] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -60,8 +61,15 @@ function Portfolio() {
       setTimeout(() => {
         setNounIdx((i) => (i + 1) % NOUNS.length);
         setVisible(true);
-      }, 350);
-    }, 3000);
+      }, 250);
+    }, 2000);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setPhotoIdx((i) => (i + 1) % HERO_PHOTOS.length);
+    }, 4500);
     return () => clearInterval(t);
   }, []);
 
