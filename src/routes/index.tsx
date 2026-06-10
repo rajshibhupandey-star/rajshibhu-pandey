@@ -155,12 +155,12 @@ function Portfolio() {
           <h1 className="font-display text-cream text-4xl md:text-6xl lg:text-7xl uppercase tracking-tight drop-shadow-2xl animate-fade-up leading-[0.95] whitespace-nowrap">
             Rajshibhu Pandey
           </h1>
-          <div className="mt-1 h-9 flex items-center">
+          <div className="-mt-1 h-11 flex items-center">
             <span
-              className={`text-xl md:text-2xl font-sans font-normal tracking-[0.08em] text-white/90 transition-all duration-300 ${
+              className={`text-2xl md:text-3xl font-serif font-normal text-white/90 transition-all duration-300 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
               }`}
-              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.45)" }}
+              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.45)", fontFamily: '"Times New Roman", Times, serif' }}
             >
               {NOUNS[nounIdx]}
             </span>
