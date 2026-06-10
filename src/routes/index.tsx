@@ -562,15 +562,33 @@ function Portfolio() {
 
 function ProjectCarousel({ projects }: { projects: Project[] }) {
   const [i, setI] = useState(0);
+  const [zoom, setZoom] = useState(false);
   const next = () => setI((v) => (v + 1) % projects.length);
   const prev = () => setI((v) => (v - 1 + projects.length) % projects.length);
   const p = projects[i];
+
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setZoom(false); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [zoom]);
+
   return (
     <div className="relative">
       <article className="grid md:grid-cols-2 gap-0 rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-        <div className="relative aspect-[4/3] md:aspect-auto bg-secondary">
-          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
-        </div>
+        <button
+          type="button"
+          onClick={() => setZoom(true)}
+          className="relative aspect-[4/3] md:aspect-auto bg-secondary group cursor-zoom-in overflow-hidden"
+          aria-label={`Enlarge ${p.title}`}
+        >
+          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </button>
         <div className="p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -605,6 +623,30 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
           </button>
         </div>
       </div>
+
+      {zoom && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
+          onClick={() => setZoom(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom(false); }}
+            className="absolute top-4 right-4 p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10"
+            aria-label="Close"
+          >
+            <X size={24} />
+          </button>
+          <img
+            src={p.image.url}
+            alt={p.title}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
     </div>
   );
 }
