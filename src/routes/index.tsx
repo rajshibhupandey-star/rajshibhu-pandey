@@ -16,8 +16,12 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
+import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
+import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
+import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
 
 const HERO_PHOTOS = [h1, h2, h3, h4, h5];
+const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
