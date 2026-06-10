@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X, Mail, Linkedin, Github } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import p1 from "@/assets/photos/img_8818.jpeg.asset.json";
+import p2 from "@/assets/photos/img_7501.jpg.asset.json";
+import p3 from "@/assets/photos/img_7196.jpg.asset.json";
+import p4 from "@/assets/photos/img_7037.jpg.asset.json";
+import p5 from "@/assets/photos/img_5121.jpg.asset.json";
+import p6 from "@/assets/photos/img_4999.jpg.asset.json";
+import p7 from "@/assets/photos/img_4201.jpeg.asset.json";
+import p8 from "@/assets/photos/img_0776.jpeg.asset.json";
+
+const HERO_PHOTOS = [p1, p2, p3, p4, p5, p6, p7, p8];
 
 export const Route = createFileRoute("/")({
   head: () => ({
