@@ -491,27 +491,47 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* VOLUNTEER */}
-      <Section id="volunteer" eyebrow="06 / Volunteer" title="Volunteer Work" muted>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <article key={i} className="rounded-lg overflow-hidden border border-border bg-card">
-              <div className="aspect-[4/3] bg-secondary" />
-              <div className="p-5">
-                <h3 className="font-semibold text-primary">Volunteer Initiative</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Brief description of the cause, role, and contribution to the community.
-                </p>
-              </div>
-            </article>
-          ))}
+      {/* NON-PROFIT */}
+      <Section id="volunteer" eyebrow="06 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+            <p>
+              Started in Stanford, at NGF we bridge the educational equity gap by shifting
+              under-resourced youth from passive AI consumers to active AI creators. We design and
+              deploy project-based curricula where students learn to build and deploy functional web
+              applications using Lovable that solve real-world community problems. We have partnered
+              with Lovable and give free credits to all students.
+            </p>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
+              <p className="mt-2">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
+              <p className="mt-2">Students bypass syntax bottlenecks, moving straight from problem identification to deploying functional, live software.</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
+              <ul className="mt-2 space-y-2 list-disc pl-5">
+                <li><span className="font-semibold text-primary">Engineering Agency:</span> Shifting youth from passive technology users to autonomous developers.</li>
+                <li><span className="font-semibold text-primary">High-Leverage Tooling:</span> Teaching industry-standard AI workflows for rapid software execution.</li>
+                <li><span className="font-semibold text-primary">Community-First Focus:</span> Anchoring all engineering projects in solving tangible local problems.</li>
+                <li><span className="font-semibold text-primary">Resilient Iteration:</span> Creating structured environments where students learn to fail safely and debug code.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img src={NGF_PHOTOS[0].url} alt="NGF team" className="col-span-2 w-full h-72 object-cover rounded-lg border border-border" />
+            <img src={NGF_PHOTOS[1].url} alt="NGF group" className="w-full h-56 object-cover rounded-lg border border-border" />
+            <img src={NGF_PHOTOS[2].url} alt="NGF at Broward College" className="w-full h-56 object-cover rounded-lg border border-border" />
+          </div>
         </div>
       </Section>
 
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="07 / Hobbies" title="Hobbies & Interests">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {["Sailing", "Photography", "Reading", "Hiking"].map((h) => (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {["Sailing", "Content Creation", "Cooking", "Photography", "Cinematography"].map((h) => (
             <div key={h} className="aspect-square rounded-lg bg-secondary border border-border flex items-end p-4 hover:border-blueprint transition-colors">
               <span className="font-semibold text-primary">{h}</span>
             </div>
