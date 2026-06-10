@@ -16,8 +16,12 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
+import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
+import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
+import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
 
 const HERO_PHOTOS = [h1, h2, h3, h4, h5];
+const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
@@ -40,7 +44,7 @@ const NAV = [
   { id: "projects", label: "Projects" },
   { id: "leadership", label: "Leadership" },
   { id: "experience", label: "Professional Experience" },
-  { id: "volunteer", label: "Volunteering" },
+  { id: "volunteer", label: "Non-Profit" },
 ];
 
 const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Volunteer", "Sailor"];
@@ -383,17 +387,7 @@ function Portfolio() {
       <Section id="about" eyebrow="01 / About" title="About Me">
         <div className="grid md:grid-cols-5 gap-10 items-start">
           <div className="md:col-span-3 space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              I am a Mechanical Engineering student at the University of Florida interested in the
-              intersection of sustainability, human-centered design, and engineering. I am currently
-              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
-            </p>
-            <p>
-              Throughout my time at UF I have undertaken several opportunities that have allowed me
-              to enhance my leadership and communication skills. I am also passionate about sales and
-              want to explore technical sales in the future.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-3">
               <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border border-border hover:border-blueprint hover:text-blueprint transition-colors">
                 <Linkedin size={16} /> LinkedIn
@@ -407,6 +401,16 @@ function Portfolio() {
                 <Mail size={16} /> {EMAIL}
               </a>
             </div>
+            <p>
+              I am a Mechanical Engineering student at the University of Florida interested in the
+              intersection of sustainability, human-centered design, and engineering. I am currently
+              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
+            </p>
+            <p>
+              Throughout my time at UF I have undertaken several opportunities that have allowed me
+              to enhance my leadership and communication skills. I am also passionate about sales and
+              want to explore technical sales in the future.
+            </p>
           </div>
           <aside className="md:col-span-2 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">At a glance</h3>
@@ -432,16 +436,16 @@ function Portfolio() {
       </Section>
 
       {/* ACADEMICS & SOFTWARE */}
-      <Section id="academics" eyebrow="03 / Academics" title="Academics & Software">
+      <Section id="academics" eyebrow="03 / Academics" title="Academics & Software/Skills">
         <div className="grid md:grid-cols-3 gap-6">
-          <Card title="Major" body="Mechanical Engineering — University of Florida.">
+          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.88">
             <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
               <FileText size={14} /> View Transcript
             </a>
           </Card>
           <Card
-            title="Software"
+            title="Software/Skills"
             body="AutoCAD, Fusion 360, ANSYS Fluent, NI LabVIEW, Microsoft Office, SOLIDWORKS, MATLAB, Python, Abaqus."
           />
           <Card
@@ -487,27 +491,47 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* VOLUNTEER */}
-      <Section id="volunteer" eyebrow="06 / Volunteer" title="Volunteer Work" muted>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <article key={i} className="rounded-lg overflow-hidden border border-border bg-card">
-              <div className="aspect-[4/3] bg-secondary" />
-              <div className="p-5">
-                <h3 className="font-semibold text-primary">Volunteer Initiative</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Brief description of the cause, role, and contribution to the community.
-                </p>
-              </div>
-            </article>
-          ))}
+      {/* NON-PROFIT */}
+      <Section id="volunteer" eyebrow="06 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+            <p>
+              Started in Stanford, at NGF we bridge the educational equity gap by shifting
+              under-resourced youth from passive AI consumers to active AI creators. We design and
+              deploy project-based curricula where students learn to build and deploy functional web
+              applications using Lovable that solve real-world community problems. We have partnered
+              with Lovable and give free credits to all students.
+            </p>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
+              <p className="mt-2">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
+              <p className="mt-2">Students bypass syntax bottlenecks, moving straight from problem identification to deploying functional, live software.</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
+              <ul className="mt-2 space-y-2 list-disc pl-5">
+                <li><span className="font-semibold text-primary">Engineering Agency:</span> Shifting youth from passive technology users to autonomous developers.</li>
+                <li><span className="font-semibold text-primary">High-Leverage Tooling:</span> Teaching industry-standard AI workflows for rapid software execution.</li>
+                <li><span className="font-semibold text-primary">Community-First Focus:</span> Anchoring all engineering projects in solving tangible local problems.</li>
+                <li><span className="font-semibold text-primary">Resilient Iteration:</span> Creating structured environments where students learn to fail safely and debug code.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img src={NGF_PHOTOS[0].url} alt="NGF team" className="col-span-2 w-full h-72 object-cover rounded-lg border border-border" />
+            <img src={NGF_PHOTOS[1].url} alt="NGF group" className="w-full h-56 object-cover rounded-lg border border-border" />
+            <img src={NGF_PHOTOS[2].url} alt="NGF at Broward College" className="w-full h-56 object-cover rounded-lg border border-border" />
+          </div>
         </div>
       </Section>
 
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="07 / Hobbies" title="Hobbies & Interests">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {["Sailing", "Photography", "Reading", "Hiking"].map((h) => (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {["Sailing", "Content Creation", "Cooking", "Photography", "Cinematography"].map((h) => (
             <div key={h} className="aspect-square rounded-lg bg-secondary border border-border flex items-end p-4 hover:border-blueprint transition-colors">
               <span className="font-semibold text-primary">{h}</span>
             </div>
@@ -538,15 +562,33 @@ function Portfolio() {
 
 function ProjectCarousel({ projects }: { projects: Project[] }) {
   const [i, setI] = useState(0);
+  const [zoom, setZoom] = useState(false);
   const next = () => setI((v) => (v + 1) % projects.length);
   const prev = () => setI((v) => (v - 1 + projects.length) % projects.length);
   const p = projects[i];
+
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setZoom(false); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [zoom]);
+
   return (
     <div className="relative">
       <article className="grid md:grid-cols-2 gap-0 rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-        <div className="relative aspect-[4/3] md:aspect-auto bg-secondary">
-          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
-        </div>
+        <button
+          type="button"
+          onClick={() => setZoom(true)}
+          className="relative aspect-[4/3] md:aspect-auto bg-secondary group cursor-zoom-in overflow-hidden"
+          aria-label={`Enlarge ${p.title}`}
+        >
+          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </button>
         <div className="p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -581,6 +623,30 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
           </button>
         </div>
       </div>
+
+      {zoom && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
+          onClick={() => setZoom(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom(false); }}
+            className="absolute top-4 right-4 p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10"
+            aria-label="Close"
+          >
+            <X size={24} />
+          </button>
+          <img
+            src={p.image.url}
+            alt={p.title}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
     </div>
   );
 }
