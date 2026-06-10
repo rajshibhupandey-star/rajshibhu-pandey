@@ -73,6 +73,32 @@
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.light {
+  --background: oklch(0.985 0.003 80);
+  --foreground: oklch(0.18 0.01 250);
+  --surface: oklch(0.96 0.004 80);
+  --card: oklch(0.99 0.002 80);
+  --card-foreground: oklch(0.18 0.01 250);
+  --popover: oklch(0.99 0.002 80);
+  --popover-foreground: oklch(0.18 0.01 250);
+  --primary: oklch(0.22 0.02 250);
+  --primary-foreground: oklch(0.98 0.003 80);
+  --cream: oklch(0.22 0.02 250);
+  --steel: oklch(0.45 0.012 250);
+  --blueprint: oklch(0.5 0.16 235);
+  --secondary: oklch(0.93 0.005 80);
+  --secondary-foreground: oklch(0.2 0.01 250);
+  --muted: oklch(0.94 0.004 80);
+  --muted-foreground: oklch(0.42 0.012 250);
+  --accent: oklch(0.5 0.16 235);
+  --accent-foreground: oklch(0.98 0.003 80);
+  --border: oklch(0.88 0.005 250);
+  --input: oklch(0.88 0.005 250);
+  --ring: oklch(0.5 0.16 235);
+  --gradient-primary: linear-gradient(135deg, oklch(0.92 0.02 250), oklch(0.85 0.08 220));
+  --gradient-overlay: linear-gradient(to top, oklch(0.1 0.01 250 / 0.85) 0%, oklch(0.1 0.01 250 / 0.45) 45%, oklch(0.1 0.01 250 / 0.15) 100%);
+}
+
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
