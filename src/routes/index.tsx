@@ -40,7 +40,7 @@ const NAV = [
   { id: "projects", label: "Projects" },
   { id: "leadership", label: "Leadership" },
   { id: "experience", label: "Professional Experience" },
-  { id: "volunteer", label: "Volunteering" },
+  { id: "volunteer", label: "Non-Profit" },
 ];
 
 const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Volunteer", "Sailor"];
