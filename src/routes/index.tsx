@@ -160,7 +160,7 @@ function Portfolio() {
               className={`text-2xl md:text-3xl font-serif font-normal text-white/90 transition-all duration-300 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
               }`}
-              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.45)", fontFamily: '"Times New Roman", Times, serif' }}
+              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.45)", fontFamily: '"Times New Roman", Times, serif', marginLeft: "0.1em" }}
             >
               {NOUNS[nounIdx]}
             </span>
