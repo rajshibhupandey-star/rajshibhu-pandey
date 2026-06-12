@@ -182,6 +182,25 @@ const PROJECTS: Project[] = [
 
 const LEADERSHIP = [
   {
+    role: "Gator Welcome Guide",
+    org: "University of Florida Admissions",
+    period: "May 2026 – Present",
+    bullets: [
+      "Serve as the official student ambassador for the University of Florida Welcome Center.",
+      "Led solo and group campus tours and host virtual panels for prospective students and families.",
+    ],
+  },
+  {
+    role: "Study Abroad Peer Advisor",
+    org: "University of Florida International Center",
+    period: "Jan. 2026 – Present",
+    bullets: [
+      "Served as a student ambassador for the University of Florida International Center.",
+      "Mentored and guided 10+ students through their study abroad application process, ensuring the right program for them.",
+      "Facilitated information sessions and campus outreach events to educate students on study abroad opportunities, program selections, and available scholarships.",
+    ],
+  },
+  {
     role: "Treasurer",
     org: "UF Club Sailing Team",
     period: "April 2024 – Present",
@@ -199,15 +218,6 @@ const LEADERSHIP = [
       "Collaborated with 56 student leaders to aid the smooth transition of 10,000+ incoming students during 30+ orientation sessions.",
       "Trained and collaborated with 20+ academic advisors to mentor small groups of 12+ engineering and pre-med students.",
       "Demonstrated critical thinking, communication, and flexibility under pressure while managing difficult conversations with families and students.",
-    ],
-  },
-  {
-    role: "Chassis Team Member",
-    org: "Gator Motorsports",
-    period: "Sept. 2023 – May 2025",
-    bullets: [
-      "Worked on the 3D design of 20+ tractive-system parts including enclosure mounts and chassis inserts.",
-      "Collaborated closely with the team leader on a carbon-fiber headrest for the FSAE car using advanced CAD tools and engineering principles.",
     ],
   },
   {
