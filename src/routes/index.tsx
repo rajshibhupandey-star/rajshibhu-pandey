@@ -4,11 +4,10 @@ import {
   ChevronDown, Menu, X, Mail, Linkedin, Github, Phone, Sun, Moon,
   ChevronLeft, ChevronRight, ExternalLink, FileText,
 } from "lucide-react";
-import h1 from "@/assets/photos/img_7193.jpg.asset.json";
-import h2 from "@/assets/photos/img_4999_v2.jpg.asset.json";
-import h3 from "@/assets/photos/img_8814.jpeg.asset.json";
-import h4 from "@/assets/photos/img_6220.jpg.asset.json";
-import h5 from "@/assets/photos/img_6176.jpg.asset.json";
+import h1 from "@/assets/photos/headshot.png.asset.json";
+import h2 from "@/assets/photos/img_7037_v2.jpg.asset.json";
+import h3 from "@/assets/photos/img_4201_v2.jpeg.asset.json";
+import h4 from "@/assets/photos/img_5003.jpg.asset.json";
 import pLatch from "@/assets/projects/latch.jpg.asset.json";
 import pCfd from "@/assets/projects/cfd.jpg.asset.json";
 import pPorsche from "@/assets/projects/porsche.jpg.asset.json";
@@ -16,15 +15,18 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
+import stle2025 from "@/assets/research/stle_2025.jpg.asset.json";
+import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
 import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
 import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
 
-const HERO_PHOTOS = [h1, h2, h3, h4, h5];
+const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
+const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/rajshibhu-pandey/";
 const EMAIL = "rajshibhu.pandey@ufl.edu";
 const PHONE = "352-219-0275";
@@ -41,13 +43,13 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
+  { id: "projects", label: "Projects & Research" },
   { id: "leadership", label: "Leadership" },
   { id: "experience", label: "Professional Experience" },
   { id: "volunteer", label: "Non-Profit" },
 ];
 
-const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Volunteer", "Sailor"];
+const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Leader", "Volunteer", "Sailor"];
 
 type Project = {
   title: string;
