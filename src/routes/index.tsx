@@ -61,23 +61,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    title: "Latch Mechanism for Friction Measurement",
-    image: pLatch,
-    what: [
-      "Bio-inspired latch mechanism for measuring friction between contact surfaces.",
-      "Led the designing and manufacturing of the mechanism parts.",
-    ],
-    how: [
-      "Designed parts in SOLIDWORKS.",
-      "Manufactured using manual mill, lathe, and CNC machining.",
-      "High-speed camera setup used to measure deflection between the contact cylinder and beam.",
-    ],
-    result: [
-      "Validated the experimental data under PhD-student guidance — friction coefficient of 0.477.",
-      "Hands-on experience with manual mill, lathe, and CNC machining.",
-    ],
-  },
-  {
     title: "Motorbike Helmet CFD Analysis",
     image: pCfd,
     what: [
@@ -96,20 +79,20 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Porsche 911 GT2 (993) Design (in progress)",
-    image: pPorsche,
+    title: "Latch Mechanism for Friction Measurement Design and Manufacturing",
+    image: pLatch,
     what: [
-      "Designing a detailed 3D model of the Porsche 911 GT2 entirely from scratch.",
-      "Modified downloaded blueprints to clarify dimensions and resolve inconsistencies.",
+      "Bio-inspired latch mechanism for measuring friction between contact surfaces.",
+      "Led the designing and manufacturing of the mechanism parts.",
     ],
     how: [
-      "Modeled as a single part in SOLIDWORKS.",
-      "Created reference planes and sketches aligned with scaled blueprints.",
-      "Surface modeling — loft, sweep, curves, surface features — for complex curves.",
+      "Designed parts in SOLIDWORKS.",
+      "Manufactured using manual mill, lathe, and CNC machining.",
+      "High-speed camera setup used to measure deflection between the contact cylinder and beam.",
     ],
     result: [
-      "Accurate representation of the classic Porsche model.",
-      "Enhanced surface-modeling and troubleshooting skills in SOLIDWORKS.",
+      "Validated the experimental data under PhD-student guidance — friction coefficient of 0.477.",
+      "Hands-on experience with manual mill, lathe, and CNC machining.",
     ],
   },
   {
@@ -127,6 +110,23 @@ const PROJECTS: Project[] = [
     result: [
       "Fully operational engine and ACE CNC machining certificate.",
       "CNC, Fusion 360, manual machining, and DFM experience.",
+    ],
+  },
+  {
+    title: "Porsche 911 GT2 (993) Design (in progress)",
+    image: pPorsche,
+    what: [
+      "Designing a detailed 3D model of the Porsche 911 GT2 entirely from scratch.",
+      "Modified downloaded blueprints to clarify dimensions and resolve inconsistencies.",
+    ],
+    how: [
+      "Modeled as a single part in SOLIDWORKS.",
+      "Created reference planes and sketches aligned with scaled blueprints.",
+      "Surface modeling — loft, sweep, curves, surface features — for complex curves.",
+    ],
+    result: [
+      "Accurate representation of the classic Porsche model.",
+      "Enhanced surface-modeling and troubleshooting skills in SOLIDWORKS.",
     ],
   },
   {
@@ -162,7 +162,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Chemistry Research Paper — SO₂ Corrosion of Galvanized Iron",
+    title: "Paper on the Corrosion of Galvanized Iron",
     image: pChemistry,
     what: [
       "Investigated the corrosion rate of galvanized iron from atmospheric SO₂ at controlled temperature, pressure, and humidity.",
@@ -177,6 +177,99 @@ const PROJECTS: Project[] = [
       "Earned the highest possible grade (A).",
     ],
   },
+];
+
+const LEADERSHIP = [
+  {
+    role: "Treasurer",
+    org: "UF Club Sailing Team",
+    period: "April 2024 – Present",
+    bullets: [
+      "Managed a $7,500+ budget, led team collaborations, aligning with the role's need for project coordination and adaptability.",
+      "Led weekly training sessions for 20+ new members, fostering skill development and team cohesion while representing UF Sailing at 10+ competitive regattas across Florida, North Carolina, and South Carolina.",
+      "Spearheaded sponsorship outreach, maintaining ongoing collaboration through regular updates and strategic partnerships.",
+    ],
+  },
+  {
+    role: "Orientation Leader",
+    org: "University of Florida — Center for New Student & Family Programs",
+    period: "Jan. 2024 – Aug. 2024",
+    bullets: [
+      "Collaborated with 56 student leaders to aid the smooth transition of 10,000+ incoming students during 30+ orientation sessions.",
+      "Trained and collaborated with 20+ academic advisors to mentor small groups of 12+ engineering and pre-med students.",
+      "Demonstrated critical thinking, communication, and flexibility under pressure while managing difficult conversations with families and students.",
+    ],
+  },
+  {
+    role: "Chassis Team Member",
+    org: "Gator Motorsports",
+    period: "Sept. 2023 – May 2025",
+    bullets: [
+      "Worked on the 3D design of 20+ tractive-system parts including enclosure mounts and chassis inserts.",
+      "Collaborated closely with the team leader on a carbon-fiber headrest for the FSAE car using advanced CAD tools and engineering principles.",
+    ],
+  },
+  {
+    role: "Freshman Leadership Engineering Group (FLEG)",
+    org: "Two consecutive roles within the same organization",
+    period: "Sept. 2023 – Aug. 2024",
+    subRoles: [
+      {
+        role: "External Affairs Ambassador",
+        period: "Feb. 2024 – Aug. 2024",
+        bullets: [
+          "Coordinated a 2-day networking event by meeting biweekly for 7 months with peer undergraduates to handle logistics and contact 250 corporate and academic representatives.",
+          "Helped organize 2 presentations for freshman attendees: resume building, elevator pitch practice, and professional prep for the networking event and career showcase.",
+        ],
+      },
+      {
+        role: "Professional Affairs Committee Member",
+        period: "Sept. 2023 – April 2024",
+        bullets: [
+          "Selected from a competitive applicant pool of 200+ freshman engineering students.",
+          "Worked with a team of 10 engineering students to plan and execute events connecting undergraduate engineers with academic and professional resources.",
+        ],
+      },
+    ],
+  },
+];
+
+type LeadershipEntry = (typeof LEADERSHIP)[number] & { subRoles?: { role: string; period: string; bullets: string[] }[]; bullets?: string[] };
+
+const EXPERIENCE = [
+  {
+    role: "Sales Intern",
+    org: "University of Florida Business Services",
+    period: "May 2026 – Present",
+    bullets: [
+      "Delivered sales presentations to thousands of admitted students and parents, successfully communicating propositions for university business services and partners (including Pepsi and Canteen).",
+      "Managed a busy promotional booth, acting as the primary point of contact to pitch comprehensive student products directly with parents, answering questions, and convincing them of the value of the products.",
+    ],
+  },
+  {
+    role: "Gator Welcome Guide",
+    org: "University of Florida Admissions",
+    period: "May 2026 – Present",
+    bullets: [
+      "Serve as the official student ambassador for the University of Florida Welcome Center.",
+      "Led solo and group campus tours and host virtual panels for prospective students and families.",
+    ],
+  },
+  {
+    role: "Resident Assistant",
+    org: "University of Florida Housing Department",
+    period: "Aug. 2024 – Present",
+    bullets: [
+      "Managed key responsibilities, maintaining records of 50+ residents, conducting room inspections, reporting maintenance issues.",
+      "Acted as a first responder to emergencies by effectively coordinating with campus security and counseling services.",
+      "Fostered community development by organizing and leading 10+ events to foster an inclusive environment for 50+ residents.",
+    ],
+  },
+];
+
+const SYMPOSIUM_POSTERS = [
+  { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2025", asset: stle2025 },
+  { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2026", asset: stle2026 },
 ];
 
 const LEADERSHIP = [
