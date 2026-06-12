@@ -801,3 +801,62 @@ function Row({ k, v }: { k: string; v: string }) {
     </div>
   );
 }
+
+function PosterLink({ label, url }: { label: string; url: string }) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="text-left text-sm font-medium text-blueprint hover:underline inline-flex items-start gap-2"
+      >
+        <FileText size={14} className="mt-0.5 shrink-0" />
+        <span>{label}</span>
+      </button>
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col animate-fade-up"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/10 text-white">
+            <p className="text-sm font-medium truncate">{label}</p>
+            <div className="flex items-center gap-2 shrink-0">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border border-white/30 hover:bg-white/10"
+              >
+                <ExternalLink size={14} /> Open full screen
+              </a>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-md hover:bg-white/10"
+                aria-label="Close"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 overflow-auto p-4 flex items-start justify-center">
+            <img src={url} alt={label} className="max-w-none w-auto h-auto cursor-zoom-in" />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
