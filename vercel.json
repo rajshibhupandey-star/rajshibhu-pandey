@@ -1,8 +1,13 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".output",
-  "devCommand": "npm run dev",
+  "buildCommand": "bun install && bun run build",
+  "outputDirectory": ".output/public",
+  "installCommand": "bun install",
   "env": {
     "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
   }
 }
