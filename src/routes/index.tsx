@@ -4,11 +4,10 @@ import {
   ChevronDown, Menu, X, Mail, Linkedin, Github, Phone, Sun, Moon,
   ChevronLeft, ChevronRight, ExternalLink, FileText,
 } from "lucide-react";
-import h1 from "@/assets/photos/img_7193.jpg.asset.json";
-import h2 from "@/assets/photos/img_4999_v2.jpg.asset.json";
-import h3 from "@/assets/photos/img_8814.jpeg.asset.json";
-import h4 from "@/assets/photos/img_6220.jpg.asset.json";
-import h5 from "@/assets/photos/img_6176.jpg.asset.json";
+import h1 from "@/assets/photos/headshot.png.asset.json";
+import h2 from "@/assets/photos/img_7037_v2.jpg.asset.json";
+import h3 from "@/assets/photos/img_4201_v2.jpeg.asset.json";
+import h4 from "@/assets/photos/img_5003.jpg.asset.json";
 import pLatch from "@/assets/projects/latch.jpg.asset.json";
 import pCfd from "@/assets/projects/cfd.jpg.asset.json";
 import pPorsche from "@/assets/projects/porsche.jpg.asset.json";
@@ -16,15 +15,18 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
+import stle2025 from "@/assets/research/stle_2025.jpg.asset.json";
+import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
 import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
 import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
 
-const HERO_PHOTOS = [h1, h2, h3, h4, h5];
+const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
+const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/rajshibhu-pandey/";
 const EMAIL = "rajshibhu.pandey@ufl.edu";
 const PHONE = "352-219-0275";
@@ -41,13 +43,13 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
+  { id: "projects", label: "Projects & Research" },
   { id: "leadership", label: "Leadership" },
   { id: "experience", label: "Professional Experience" },
   { id: "volunteer", label: "Non-Profit" },
 ];
 
-const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Volunteer", "Sailor"];
+const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Leader", "Volunteer", "Sailor"];
 
 type Project = {
   title: string;
@@ -58,23 +60,6 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  {
-    title: "Latch Mechanism for Friction Measurement",
-    image: pLatch,
-    what: [
-      "Bio-inspired latch mechanism for measuring friction between contact surfaces.",
-      "Led the designing and manufacturing of the mechanism parts.",
-    ],
-    how: [
-      "Designed parts in SOLIDWORKS.",
-      "Manufactured using manual mill, lathe, and CNC machining.",
-      "High-speed camera setup used to measure deflection between the contact cylinder and beam.",
-    ],
-    result: [
-      "Validated the experimental data under PhD-student guidance — friction coefficient of 0.477.",
-      "Hands-on experience with manual mill, lathe, and CNC machining.",
-    ],
-  },
   {
     title: "Motorbike Helmet CFD Analysis",
     image: pCfd,
@@ -94,20 +79,20 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Porsche 911 GT2 (993) Design (in progress)",
-    image: pPorsche,
+    title: "Latch Mechanism for Friction Measurement Design and Manufacturing",
+    image: pLatch,
     what: [
-      "Designing a detailed 3D model of the Porsche 911 GT2 entirely from scratch.",
-      "Modified downloaded blueprints to clarify dimensions and resolve inconsistencies.",
+      "Bio-inspired latch mechanism for measuring friction between contact surfaces.",
+      "Led the designing and manufacturing of the mechanism parts.",
     ],
     how: [
-      "Modeled as a single part in SOLIDWORKS.",
-      "Created reference planes and sketches aligned with scaled blueprints.",
-      "Surface modeling — loft, sweep, curves, surface features — for complex curves.",
+      "Designed parts in SOLIDWORKS.",
+      "Manufactured using manual mill, lathe, and CNC machining.",
+      "High-speed camera setup used to measure deflection between the contact cylinder and beam.",
     ],
     result: [
-      "Accurate representation of the classic Porsche model.",
-      "Enhanced surface-modeling and troubleshooting skills in SOLIDWORKS.",
+      "Validated the experimental data under PhD-student guidance — friction coefficient of 0.477.",
+      "Hands-on experience with manual mill, lathe, and CNC machining.",
     ],
   },
   {
@@ -125,6 +110,23 @@ const PROJECTS: Project[] = [
     result: [
       "Fully operational engine and ACE CNC machining certificate.",
       "CNC, Fusion 360, manual machining, and DFM experience.",
+    ],
+  },
+  {
+    title: "Porsche 911 GT2 (993) Design (in progress)",
+    image: pPorsche,
+    what: [
+      "Designing a detailed 3D model of the Porsche 911 GT2 entirely from scratch.",
+      "Modified downloaded blueprints to clarify dimensions and resolve inconsistencies.",
+    ],
+    how: [
+      "Modeled as a single part in SOLIDWORKS.",
+      "Created reference planes and sketches aligned with scaled blueprints.",
+      "Surface modeling — loft, sweep, curves, surface features — for complex curves.",
+    ],
+    result: [
+      "Accurate representation of the classic Porsche model.",
+      "Enhanced surface-modeling and troubleshooting skills in SOLIDWORKS.",
     ],
   },
   {
@@ -160,7 +162,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Chemistry Research Paper — SO₂ Corrosion of Galvanized Iron",
+    title: "Paper on the Corrosion of Galvanized Iron",
     image: pChemistry,
     what: [
       "Investigated the corrosion rate of galvanized iron from atmospheric SO₂ at controlled temperature, pressure, and humidity.",
@@ -201,31 +203,75 @@ const LEADERSHIP = [
   {
     role: "Chassis Team Member",
     org: "Gator Motorsports",
-    period: "Sept. 2023 – Present",
+    period: "Sept. 2023 – May 2025",
     bullets: [
       "Worked on the 3D design of 20+ tractive-system parts including enclosure mounts and chassis inserts.",
       "Collaborated closely with the team leader on a carbon-fiber headrest for the FSAE car using advanced CAD tools and engineering principles.",
     ],
   },
   {
-    role: "External Affairs Ambassador",
-    org: "Freshman Leadership Engineering Group",
-    period: "Feb. 2024 – Aug. 2024",
-    bullets: [
-      "Coordinated a 2-day networking event by meeting biweekly for 7 months with peer undergraduates to handle logistics and contact 250 corporate and academic representatives.",
-      "Helped organize 2 presentations for freshman attendees: resume building, elevator pitch practice, and professional prep for the networking event and career showcase.",
-    ],
-  },
-  {
-    role: "Professional Affairs Committee Member",
-    org: "Freshman Leadership Engineering Group",
-    period: "Sept. 2023 – April 2024",
-    bullets: [
-      "Selected from a competitive applicant pool of 200+ freshman engineering students.",
-      "Worked with a team of 10 engineering students to plan and execute events connecting undergraduate engineers with academic and professional resources.",
+    role: "Freshman Leadership Engineering Group (FLEG)",
+    org: "Two consecutive roles within the same organization",
+    period: "Sept. 2023 – Aug. 2024",
+    subRoles: [
+      {
+        role: "External Affairs Ambassador",
+        period: "Feb. 2024 – Aug. 2024",
+        bullets: [
+          "Coordinated a 2-day networking event by meeting biweekly for 7 months with peer undergraduates to handle logistics and contact 250 corporate and academic representatives.",
+          "Helped organize 2 presentations for freshman attendees: resume building, elevator pitch practice, and professional prep for the networking event and career showcase.",
+        ],
+      },
+      {
+        role: "Professional Affairs Committee Member",
+        period: "Sept. 2023 – April 2024",
+        bullets: [
+          "Selected from a competitive applicant pool of 200+ freshman engineering students.",
+          "Worked with a team of 10 engineering students to plan and execute events connecting undergraduate engineers with academic and professional resources.",
+        ],
+      },
     ],
   },
 ];
+
+type LeadershipEntry = (typeof LEADERSHIP)[number] & { subRoles?: { role: string; period: string; bullets: string[] }[]; bullets?: string[] };
+
+const EXPERIENCE = [
+  {
+    role: "Sales Intern",
+    org: "University of Florida Business Services",
+    period: "May 2026 – Present",
+    bullets: [
+      "Delivered sales presentations to thousands of admitted students and parents, successfully communicating propositions for university business services and partners (including Pepsi and Canteen).",
+      "Managed a busy promotional booth, acting as the primary point of contact to pitch comprehensive student products directly with parents, answering questions, and convincing them of the value of the products.",
+    ],
+  },
+  {
+    role: "Gator Welcome Guide",
+    org: "University of Florida Admissions",
+    period: "May 2026 – Present",
+    bullets: [
+      "Serve as the official student ambassador for the University of Florida Welcome Center.",
+      "Led solo and group campus tours and host virtual panels for prospective students and families.",
+    ],
+  },
+  {
+    role: "Resident Assistant",
+    org: "University of Florida Housing Department",
+    period: "Aug. 2024 – Present",
+    bullets: [
+      "Managed key responsibilities, maintaining records of 50+ residents, conducting room inspections, reporting maintenance issues.",
+      "Acted as a first responder to emergencies by effectively coordinating with campus security and counseling services.",
+      "Fostered community development by organizing and leading 10+ events to foster an inclusive environment for 50+ residents.",
+    ],
+  },
+];
+
+const SYMPOSIUM_POSTERS = [
+  { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2025", asset: stle2025 },
+  { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2026", asset: stle2026 },
+];
+
 
 function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
@@ -424,16 +470,57 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* PROJECTS — carousel */}
-      <Section id="projects" eyebrow="02 / Projects" title="Projects" muted>
-        <ProjectCarousel projects={PROJECTS} />
-        <div className="mt-10 text-center">
+      {/* PROJECTS & RESEARCH */}
+      <Section id="projects" eyebrow="02 / Projects & Research" title="Projects & Research" muted>
+        <div className="mb-8">
           <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer"
              className="inline-flex items-center gap-2 text-base font-semibold text-blueprint hover:underline">
             <ExternalLink size={18} /> Click for Engineering Portfolio
           </a>
         </div>
+        <ProjectCarousel projects={PROJECTS} />
+
+        {/* Research */}
+        <div className="mt-20">
+          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Research</h3>
+          <div className="mt-6 grid md:grid-cols-2 gap-10 items-start">
+            <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
+              <p><span className="font-semibold text-primary">Principal Investigator:</span> Dr. Alison C. Dunn</p>
+              <p>
+                <span className="font-semibold text-primary">Lab:</span> Bio/Material Tribology Lab —{" "}
+                <a href={LAB_URL} target="_blank" rel="noopener noreferrer" className="text-blueprint hover:underline inline-flex items-center gap-1">
+                  Website <ExternalLink size={14} />
+                </a>
+              </p>
+              <p><span className="font-semibold text-primary">Project Focus Area:</span> Conformal Frictional Latches</p>
+              <p className="pt-2">
+                The click beetle is an inspirational organism because of its ability to leverage very limited
+                muscle power and distributed elastic energy storage toward exceedingly quick snap maneuvers.
+                These maneuvers can launch the beetle up from a substrate, or allow it to elude a predator.
+                The ability to perform this maneuver hinges on a frictional latch that is integrated into its
+                exoskeleton between the prothorax and mesothorax body segments. Along with collaborators, we
+                have studied the geometry of the latch and its function. Further studying and understanding
+                how geometry and friction control the latch can lead to bio-inspired mechanisms for quick
+                deployment of light structures.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <img src={h2.url} alt="Rajshibhu at research symposium" className="w-full h-72 object-cover rounded-lg border border-border" />
+              <div className="rounded-lg border border-border bg-card p-5">
+                <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Symposium Posters</p>
+                <ul className="mt-3 space-y-2">
+                  {SYMPOSIUM_POSTERS.map((p) => (
+                    <li key={p.label}>
+                      <PosterLink label={p.label} url={p.asset.url} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </Section>
+
 
       {/* ACADEMICS & SOFTWARE */}
       <Section id="academics" eyebrow="03 / Academics" title="Academics & Software/Skills">
@@ -458,14 +545,31 @@ function Portfolio() {
       {/* LEADERSHIP */}
       <Section id="leadership" eyebrow="04 / Leadership" title="Leadership" muted>
         <ol className="relative border-l border-border ml-3 space-y-8">
-          {LEADERSHIP.map((l, i) => (
+          {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
             <li key={i} className="pl-6 relative">
               <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-blueprint ring-4 ring-background" />
               <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">{l.period}</p>
-              <h3 className="mt-1 text-lg font-semibold text-primary">{l.role} <span className="text-steel font-normal">| {l.org}</span></h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
-                {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
-              </ul>
+              <h3 className="mt-1 text-lg font-semibold text-primary">
+                {l.role} <span className="text-steel font-normal">| {l.org}</span>
+              </h3>
+              {l.bullets && (
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                  {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              )}
+              {l.subRoles && (
+                <div className="mt-4 ml-2 border-l-2 border-blueprint/40 pl-5 space-y-5">
+                  {l.subRoles.map((s, j) => (
+                    <div key={j}>
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-blueprint/80">{s.period}</p>
+                      <h4 className="mt-1 text-base font-semibold text-primary">{s.role}</h4>
+                      <ul className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                        {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ol>
@@ -474,22 +578,23 @@ function Portfolio() {
       {/* EXPERIENCE */}
       <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
         <div className="grid md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
+          {EXPERIENCE.map((e, i) => (
             <article key={i} className="rounded-lg border border-border bg-card p-6">
               <div className="flex justify-between items-start gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Role Title</h3>
-                  <p className="text-sm text-steel">Company / Organization</p>
+                  <h3 className="text-lg font-semibold text-primary">{e.role}</h3>
+                  <p className="text-sm text-steel">{e.org}</p>
                 </div>
-                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">Year</span>
+                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{e.period}</span>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Concise summary of responsibilities, technologies used, and outcomes achieved.
-              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground list-disc pl-5">
+                {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+              </ul>
             </article>
           ))}
         </div>
       </Section>
+
 
       {/* NON-PROFIT */}
       <Section id="volunteer" eyebrow="06 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
@@ -694,5 +799,64 @@ function Row({ k, v }: { k: string; v: string }) {
       <dt className="text-muted-foreground">{k}</dt>
       <dd className="text-foreground font-medium text-right">{v}</dd>
     </div>
+  );
+}
+
+function PosterLink({ label, url }: { label: string; url: string }) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="text-left text-sm font-medium text-blueprint hover:underline inline-flex items-start gap-2"
+      >
+        <FileText size={14} className="mt-0.5 shrink-0" />
+        <span>{label}</span>
+      </button>
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col animate-fade-up"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/10 text-white">
+            <p className="text-sm font-medium truncate">{label}</p>
+            <div className="flex items-center gap-2 shrink-0">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border border-white/30 hover:bg-white/10"
+              >
+                <ExternalLink size={14} /> Open full screen
+              </a>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-md hover:bg-white/10"
+                aria-label="Close"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 overflow-auto p-4 flex items-start justify-center">
+            <img src={url} alt={label} className="max-w-none w-auto h-auto cursor-zoom-in" />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
