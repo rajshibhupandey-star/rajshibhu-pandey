@@ -1,8 +1,5 @@
 {
   "buildCommand": "bun install && bun run build",
-  "outputDirectory": ".output/public",
-  "installCommand": "bun install",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "outputDirectory": ".output",
+  "installCommand": "bun install"
 }
