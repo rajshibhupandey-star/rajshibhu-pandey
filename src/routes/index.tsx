@@ -272,55 +272,6 @@ const SYMPOSIUM_POSTERS = [
   { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2026", asset: stle2026 },
 ];
 
-const LEADERSHIP = [
-  {
-    role: "Treasurer",
-    org: "UF Club Sailing Team",
-    period: "April 2024 – Present",
-    bullets: [
-      "Managed a $7,500+ budget, led team collaborations, aligning with the role's need for project coordination and adaptability.",
-      "Led weekly training sessions for 20+ new members, fostering skill development and team cohesion while representing UF Sailing at 10+ competitive regattas across Florida, North Carolina, and South Carolina.",
-      "Spearheaded sponsorship outreach, maintaining ongoing collaboration through regular updates and strategic partnerships.",
-    ],
-  },
-  {
-    role: "Orientation Leader",
-    org: "University of Florida — Center for New Student & Family Programs",
-    period: "Jan. 2024 – Aug. 2024",
-    bullets: [
-      "Collaborated with 56 student leaders to aid the smooth transition of 10,000+ incoming students during 30+ orientation sessions.",
-      "Trained and collaborated with 20+ academic advisors to mentor small groups of 12+ engineering and pre-med students.",
-      "Demonstrated critical thinking, communication, and flexibility under pressure while managing difficult conversations with families and students.",
-    ],
-  },
-  {
-    role: "Chassis Team Member",
-    org: "Gator Motorsports",
-    period: "Sept. 2023 – Present",
-    bullets: [
-      "Worked on the 3D design of 20+ tractive-system parts including enclosure mounts and chassis inserts.",
-      "Collaborated closely with the team leader on a carbon-fiber headrest for the FSAE car using advanced CAD tools and engineering principles.",
-    ],
-  },
-  {
-    role: "External Affairs Ambassador",
-    org: "Freshman Leadership Engineering Group",
-    period: "Feb. 2024 – Aug. 2024",
-    bullets: [
-      "Coordinated a 2-day networking event by meeting biweekly for 7 months with peer undergraduates to handle logistics and contact 250 corporate and academic representatives.",
-      "Helped organize 2 presentations for freshman attendees: resume building, elevator pitch practice, and professional prep for the networking event and career showcase.",
-    ],
-  },
-  {
-    role: "Professional Affairs Committee Member",
-    org: "Freshman Leadership Engineering Group",
-    period: "Sept. 2023 – April 2024",
-    bullets: [
-      "Selected from a competitive applicant pool of 200+ freshman engineering students.",
-      "Worked with a team of 10 engineering students to plan and execute events connecting undergraduate engineers with academic and professional resources.",
-    ],
-  },
-];
 
 function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
