@@ -545,14 +545,31 @@ function Portfolio() {
       {/* LEADERSHIP */}
       <Section id="leadership" eyebrow="04 / Leadership" title="Leadership" muted>
         <ol className="relative border-l border-border ml-3 space-y-8">
-          {LEADERSHIP.map((l, i) => (
+          {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
             <li key={i} className="pl-6 relative">
               <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-blueprint ring-4 ring-background" />
               <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">{l.period}</p>
-              <h3 className="mt-1 text-lg font-semibold text-primary">{l.role} <span className="text-steel font-normal">| {l.org}</span></h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
-                {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
-              </ul>
+              <h3 className="mt-1 text-lg font-semibold text-primary">
+                {l.role} <span className="text-steel font-normal">| {l.org}</span>
+              </h3>
+              {l.bullets && (
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                  {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              )}
+              {l.subRoles && (
+                <div className="mt-4 ml-2 border-l-2 border-blueprint/40 pl-5 space-y-5">
+                  {l.subRoles.map((s, j) => (
+                    <div key={j}>
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-blueprint/80">{s.period}</p>
+                      <h4 className="mt-1 text-base font-semibold text-primary">{s.role}</h4>
+                      <ul className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                        {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ol>
@@ -561,22 +578,23 @@ function Portfolio() {
       {/* EXPERIENCE */}
       <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
         <div className="grid md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
+          {EXPERIENCE.map((e, i) => (
             <article key={i} className="rounded-lg border border-border bg-card p-6">
               <div className="flex justify-between items-start gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Role Title</h3>
-                  <p className="text-sm text-steel">Company / Organization</p>
+                  <h3 className="text-lg font-semibold text-primary">{e.role}</h3>
+                  <p className="text-sm text-steel">{e.org}</p>
                 </div>
-                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">Year</span>
+                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{e.period}</span>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Concise summary of responsibilities, technologies used, and outcomes achieved.
-              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground list-disc pl-5">
+                {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+              </ul>
             </article>
           ))}
         </div>
       </Section>
+
 
       {/* NON-PROFIT */}
       <Section id="volunteer" eyebrow="06 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
