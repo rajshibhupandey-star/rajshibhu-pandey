@@ -1,0 +1,9 @@
+[build]
+command = "bun install && bun run build"
+publish = ".output/public"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = true
