@@ -267,16 +267,6 @@ const EXPERIENCE = [
       "Fostered community development by organizing and leading 10+ events to foster an inclusive environment for 50+ residents.",
     ],
   },
-  {
-    role: "Resident Assistant",
-    org: "University of Florida Housing Department",
-    period: "Aug. 2024 – Present",
-    bullets: [
-      "Managed key responsibilities, maintaining records of 50+ residents, conducting room inspections, reporting maintenance issues.",
-      "Acted as a first responder to emergencies by effectively coordinating with campus security and counseling services.",
-      "Fostered community development by organizing and leading 10+ events to foster an inclusive environment for 50+ residents.",
-    ],
-  },
 ];
 
 const SYMPOSIUM_POSTERS = [
