@@ -15,6 +15,8 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
+import pBikeFrame from "@/assets/projects/bike_frame_fea.png.asset.json";
+import pTorqueArm from "@/assets/projects/torque_arm_fea.png.asset.json";
 import stle2025 from "@/assets/research/stle_2025.jpg.asset.json";
 import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
@@ -43,14 +45,13 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
   { id: "projects", label: "Projects & Research" },
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
   { id: "leadership", label: "Leadership" },
 ];
 
-const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Leader", "Volunteer", "Sailor"];
+const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Future Engineer", "Volunteer", "Sailor"];
 
 type Project = {
   title: string;
@@ -61,6 +62,41 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+  {
+    title: "Finite Element Modeling of an Aluminum Bicycle Frame",
+    image: pBikeFrame,
+    what: [
+      "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
+      "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
+    ],
+    how: [
+      "Modeled the 8-tube frame in Abaqus as a 2D planar wireframe structure with a pin constraint at the rear wheel and roller at the front wheel.",
+      "Applied static load cases at the seat, pedals, and front wheel, applying safety and dynamic factors.",
+      "Conducted a 10-iteration FSD optimization script and linear perturbation buckling analysis."
+    ],
+    result: [
+      "Successfully minimized bicycle frame mass while keeping maximum normal stresses below the 240 MPa allowable limit.",
+      "Achieved a structurally stable design with a fundamental buckling eigenvalue (critical load factor) of 1.5283."
+    ]
+  },
+  {
+    title: "Torque-Arm FEA Design Optimization",
+    image: pTorqueArm,
+    what: [
+      "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
+      "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
+    ],
+    how: [
+      "Performed initial analytical calculations using Euler-Bernoulli beam theory.",
+      "Modeled torque-arm in Abaqus CAE under plane-stress condition using MPC constraints for pin connection simulation.",
+      "Conducted convergence (0.6cm to 1.35cm global seeds) and element comparison studies (triangular vs quadrilateral, linear vs quadratic elements).",
+      "Modified geometric shape variables to minimize mass while blunting stress concentration near the slot."
+    ],
+    result: [
+      "Optimized mass down from 2.49 kg to 2.15 kg (a 13.6% mass reduction).",
+      "Maintained peak von Mises stress at 546.3 MPa, meeting the 550 MPa yield strength safety criteria."
+    ]
+  },
   {
     title: "Motorbike Helmet CFD Analysis",
     image: pCfd,
