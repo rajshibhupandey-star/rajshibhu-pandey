@@ -545,7 +545,7 @@ function Portfolio() {
       </Section>
 
       {/* LEADERSHIP */}
-      <Section id="leadership" eyebrow="04 / Leadership" title="Leadership" muted>
+      <Section id="leadership" eyebrow="06 / Leadership" title="Leadership" muted>
         <ol className="relative border-l border-border ml-3 space-y-8">
           {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
             <li key={i} className="pl-6 relative">
@@ -575,7 +575,17 @@ function Portfolio() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-14">
+          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Content Creation</h3>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+            With 12,000+ followers and 2 million+ views, I help students online to build their
+            profile and find the right scholarships that can help them fund their education
+            either in India or abroad.
+          </p>
+        </div>
       </Section>
+
 
       {/* EXPERIENCE */}
       <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
