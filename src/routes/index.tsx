@@ -258,12 +258,13 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: "Gator Welcome Guide",
-    org: "University of Florida Admissions",
-    period: "May 2026 – Present",
+    role: "Resident Assistant",
+    org: "University of Florida Housing Department",
+    period: "Aug. 2024 – Present",
     bullets: [
-      "Serve as the official student ambassador for the University of Florida Welcome Center.",
-      "Led solo and group campus tours and host virtual panels for prospective students and families.",
+      "Managed key responsibilities, maintaining records of 50+ residents, conducting room inspections, reporting maintenance issues.",
+      "Acted as a first responder to emergencies by effectively coordinating with campus security and counseling services.",
+      "Fostered community development by organizing and leading 10+ events to foster an inclusive environment for 50+ residents.",
     ],
   },
   {
