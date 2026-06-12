@@ -15,8 +15,10 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
-import pBikeFrame from "@/assets/projects/bike_frame_fea.png.asset.json";
-import pTorqueArm from "@/assets/projects/torque_arm_fea.png.asset.json";
+import pBikeFrame1 from "@/assets/projects/bike_frame_1.png.asset.json";
+import pBikeFrame2 from "@/assets/projects/bike_frame_2.png.asset.json";
+import pTorqueArm1 from "@/assets/projects/torque_arm_1.png.asset.json";
+import pTorqueArm2 from "@/assets/projects/torque_arm_2.png.asset.json";
 import stle2025 from "@/assets/research/stle_2025.jpg.asset.json";
 import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
@@ -55,7 +57,8 @@ const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Future Eng
 
 type Project = {
   title: string;
-  image: { url: string };
+  image?: { url: string };
+  images?: { url: string }[];
   what: string[];
   how: string[];
   result: string[];
@@ -64,7 +67,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     title: "Finite Element Modeling of an Aluminum Bicycle Frame",
-    image: pBikeFrame,
+    images: [pBikeFrame1, pBikeFrame2],
     what: [
       "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
       "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
@@ -81,7 +84,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "Torque-Arm FEA Design Optimization",
-    image: pTorqueArm,
+    images: [pTorqueArm1, pTorqueArm2],
     what: [
       "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
       "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
@@ -719,6 +722,13 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
   const prev = () => setI((v) => (v - 1 + projects.length) % projects.length);
   const p = projects[i];
 
+  const images = p.images || (p.image ? [p.image] : []);
+  const [imgIdx, setImgIdx] = useState(0);
+
+  useEffect(() => {
+    setImgIdx(0);
+  }, [i]);
+
   useEffect(() => {
     if (!zoom) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setZoom(false); };
@@ -730,17 +740,71 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
     };
   }, [zoom]);
 
+  const currentImage = images[imgIdx];
+
   return (
     <div className="relative">
       <article className="grid md:grid-cols-2 gap-0 rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-        <button
-          type="button"
-          onClick={() => setZoom(true)}
-          className="relative aspect-[4/3] md:aspect-auto bg-secondary group cursor-zoom-in overflow-hidden"
-          aria-label={`Enlarge ${p.title}`}
-        >
-          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        </button>
+        <div className="relative aspect-[4/3] md:aspect-auto bg-secondary group overflow-hidden h-full min-h-[300px]">
+          {currentImage && (
+            <button
+              type="button"
+              onClick={() => setZoom(true)}
+              className="absolute inset-0 w-full h-full cursor-zoom-in"
+              aria-label={`Enlarge ${p.title}`}
+            >
+              <img
+                src={currentImage.url}
+                alt={p.title}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </button>
+          )}
+
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setImgIdx((v) => (v - 1 + images.length) % images.length);
+                }}
+                className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white shadow-md transition-colors z-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setImgIdx((v) => (v + 1) % images.length);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white shadow-md transition-colors z-10"
+                aria-label="Next image"
+              >
+                <ChevronRight size={16} />
+              </button>
+
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/55 px-2.5 py-1 rounded-full backdrop-blur-xs z-10">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setImgIdx(idx);
+                    }}
+                    className={`h-1.5 rounded-full transition-all ${
+                      idx === imgIdx ? "w-4 bg-white" : "w-1.5 bg-white/50 hover:bg-white"
+                    }`}
+                    aria-label={`Go to image ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
         <div className="p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -776,7 +840,7 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
         </div>
       </div>
 
-      {zoom && (
+      {zoom && currentImage && (
         <div
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
           onClick={() => setZoom(false)}
@@ -792,7 +856,7 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             <X size={24} />
           </button>
           <img
-            src={p.image.url}
+            src={currentImage.url}
             alt={p.title}
             onClick={(e) => e.stopPropagation()}
             className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
