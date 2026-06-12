@@ -589,6 +589,7 @@ function Portfolio() {
 
       {/* EXPERIENCE */}
       <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
+
         <div className="grid md:grid-cols-2 gap-6">
           {EXPERIENCE.map((e, i) => (
             <article key={i} className="rounded-lg border border-border bg-card p-6">
