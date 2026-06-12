@@ -43,10 +43,11 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
+  { id: "about", label: "About Me" },
   { id: "projects", label: "Projects & Research" },
-  { id: "leadership", label: "Leadership" },
-  { id: "experience", label: "Professional Experience" },
   { id: "volunteer", label: "Non-Profit" },
+  { id: "experience", label: "Professional Experience" },
+  { id: "leadership", label: "Leadership" },
 ];
 
 const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Leader", "Volunteer", "Sailor"];
@@ -181,6 +182,25 @@ const PROJECTS: Project[] = [
 
 const LEADERSHIP = [
   {
+    role: "Gator Welcome Guide",
+    org: "University of Florida Admissions",
+    period: "May 2026 – Present",
+    bullets: [
+      "Serve as the official student ambassador for the University of Florida Welcome Center.",
+      "Led solo and group campus tours and host virtual panels for prospective students and families.",
+    ],
+  },
+  {
+    role: "Study Abroad Peer Advisor",
+    org: "University of Florida International Center",
+    period: "Jan. 2026 – Present",
+    bullets: [
+      "Served as a student ambassador for the University of Florida International Center.",
+      "Mentored and guided 10+ students through their study abroad application process, ensuring the right program for them.",
+      "Facilitated information sessions and campus outreach events to educate students on study abroad opportunities, program selections, and available scholarships.",
+    ],
+  },
+  {
     role: "Treasurer",
     org: "UF Club Sailing Team",
     period: "April 2024 – Present",
@@ -198,15 +218,6 @@ const LEADERSHIP = [
       "Collaborated with 56 student leaders to aid the smooth transition of 10,000+ incoming students during 30+ orientation sessions.",
       "Trained and collaborated with 20+ academic advisors to mentor small groups of 12+ engineering and pre-med students.",
       "Demonstrated critical thinking, communication, and flexibility under pressure while managing difficult conversations with families and students.",
-    ],
-  },
-  {
-    role: "Chassis Team Member",
-    org: "Gator Motorsports",
-    period: "Sept. 2023 – May 2025",
-    bullets: [
-      "Worked on the 3D design of 20+ tractive-system parts including enclosure mounts and chassis inserts.",
-      "Collaborated closely with the team leader on a carbon-fiber headrest for the FSAE car using advanced CAD tools and engineering principles.",
     ],
   },
   {
@@ -244,15 +255,6 @@ const EXPERIENCE = [
     bullets: [
       "Delivered sales presentations to thousands of admitted students and parents, successfully communicating propositions for university business services and partners (including Pepsi and Canteen).",
       "Managed a busy promotional booth, acting as the primary point of contact to pitch comprehensive student products directly with parents, answering questions, and convincing them of the value of the products.",
-    ],
-  },
-  {
-    role: "Gator Welcome Guide",
-    org: "University of Florida Admissions",
-    period: "May 2026 – Present",
-    bullets: [
-      "Serve as the official student ambassador for the University of Florida Welcome Center.",
-      "Led solo and group campus tours and host virtual panels for prospective students and families.",
     ],
   },
   {
@@ -542,62 +544,8 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* LEADERSHIP */}
-      <Section id="leadership" eyebrow="04 / Leadership" title="Leadership" muted>
-        <ol className="relative border-l border-border ml-3 space-y-8">
-          {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
-            <li key={i} className="pl-6 relative">
-              <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-blueprint ring-4 ring-background" />
-              <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">{l.period}</p>
-              <h3 className="mt-1 text-lg font-semibold text-primary">
-                {l.role} <span className="text-steel font-normal">| {l.org}</span>
-              </h3>
-              {l.bullets && (
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
-                  {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                </ul>
-              )}
-              {l.subRoles && (
-                <div className="mt-4 ml-2 border-l-2 border-blueprint/40 pl-5 space-y-5">
-                  {l.subRoles.map((s, j) => (
-                    <div key={j}>
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-blueprint/80">{s.period}</p>
-                      <h4 className="mt-1 text-base font-semibold text-primary">{s.role}</h4>
-                      <ul className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
-                        {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* EXPERIENCE */}
-      <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
-        <div className="grid md:grid-cols-2 gap-6">
-          {EXPERIENCE.map((e, i) => (
-            <article key={i} className="rounded-lg border border-border bg-card p-6">
-              <div className="flex justify-between items-start gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-primary">{e.role}</h3>
-                  <p className="text-sm text-steel">{e.org}</p>
-                </div>
-                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{e.period}</span>
-              </div>
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground list-disc pl-5">
-                {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-
       {/* NON-PROFIT */}
-      <Section id="volunteer" eyebrow="06 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
+      <Section id="volunteer" eyebrow="04 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
@@ -632,6 +580,69 @@ function Portfolio() {
           </div>
         </div>
       </Section>
+
+      {/* EXPERIENCE */}
+      <Section id="experience" eyebrow="05 / Experience" title="Professional Experience">
+        <div className="grid md:grid-cols-2 gap-6">
+          {EXPERIENCE.map((e, i) => (
+            <article key={i} className="rounded-lg border border-border bg-card p-6">
+              <div className="flex justify-between items-start gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-primary">{e.role}</h3>
+                  <p className="text-sm text-steel">{e.org}</p>
+                </div>
+                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{e.period}</span>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground list-disc pl-5">
+                {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* LEADERSHIP */}
+      <Section id="leadership" eyebrow="06 / Leadership" title="Leadership" muted>
+        <ol className="relative border-l border-border ml-3 space-y-8">
+          {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
+            <li key={i} className="pl-6 relative">
+              <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-blueprint ring-4 ring-background" />
+              <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">{l.period}</p>
+              <h3 className="mt-1 text-lg font-semibold text-primary">
+                {l.role} <span className="text-steel font-normal">| {l.org}</span>
+              </h3>
+              {l.bullets && (
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                  {l.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              )}
+              {l.subRoles && (
+                <div className="mt-4 ml-2 border-l-2 border-blueprint/40 pl-5 space-y-5">
+                  {l.subRoles.map((s, j) => (
+                    <div key={j}>
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-blueprint/80">{s.period}</p>
+                      <h4 className="mt-1 text-base font-semibold text-primary">{s.role}</h4>
+                      <ul className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed max-w-3xl list-disc pl-5">
+                        {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-14">
+          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Content Creation</h3>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+            With 12,000+ followers and 2 million+ views, I help students online to build their
+            profile and find the right scholarships that can help them fund their education
+            either in India or abroad.
+          </p>
+        </div>
+      </Section>
+
 
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="07 / Hobbies" title="Hobbies & Interests">
