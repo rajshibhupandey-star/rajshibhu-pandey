@@ -470,16 +470,57 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* PROJECTS — carousel */}
-      <Section id="projects" eyebrow="02 / Projects" title="Projects" muted>
-        <ProjectCarousel projects={PROJECTS} />
-        <div className="mt-10 text-center">
+      {/* PROJECTS & RESEARCH */}
+      <Section id="projects" eyebrow="02 / Projects & Research" title="Projects & Research" muted>
+        <div className="mb-8">
           <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer"
              className="inline-flex items-center gap-2 text-base font-semibold text-blueprint hover:underline">
             <ExternalLink size={18} /> Click for Engineering Portfolio
           </a>
         </div>
+        <ProjectCarousel projects={PROJECTS} />
+
+        {/* Research */}
+        <div className="mt-20">
+          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Research</h3>
+          <div className="mt-6 grid md:grid-cols-2 gap-10 items-start">
+            <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
+              <p><span className="font-semibold text-primary">Principal Investigator:</span> Dr. Alison C. Dunn</p>
+              <p>
+                <span className="font-semibold text-primary">Lab:</span> Bio/Material Tribology Lab —{" "}
+                <a href={LAB_URL} target="_blank" rel="noopener noreferrer" className="text-blueprint hover:underline inline-flex items-center gap-1">
+                  Website <ExternalLink size={14} />
+                </a>
+              </p>
+              <p><span className="font-semibold text-primary">Project Focus Area:</span> Conformal Frictional Latches</p>
+              <p className="pt-2">
+                The click beetle is an inspirational organism because of its ability to leverage very limited
+                muscle power and distributed elastic energy storage toward exceedingly quick snap maneuvers.
+                These maneuvers can launch the beetle up from a substrate, or allow it to elude a predator.
+                The ability to perform this maneuver hinges on a frictional latch that is integrated into its
+                exoskeleton between the prothorax and mesothorax body segments. Along with collaborators, we
+                have studied the geometry of the latch and its function. Further studying and understanding
+                how geometry and friction control the latch can lead to bio-inspired mechanisms for quick
+                deployment of light structures.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <img src={h2.url} alt="Rajshibhu at research symposium" className="w-full h-72 object-cover rounded-lg border border-border" />
+              <div className="rounded-lg border border-border bg-card p-5">
+                <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Symposium Posters</p>
+                <ul className="mt-3 space-y-2">
+                  {SYMPOSIUM_POSTERS.map((p) => (
+                    <li key={p.label}>
+                      <PosterLink label={p.label} url={p.asset.url} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </Section>
+
 
       {/* ACADEMICS & SOFTWARE */}
       <Section id="academics" eyebrow="03 / Academics" title="Academics & Software/Skills">
