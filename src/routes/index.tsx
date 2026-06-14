@@ -60,8 +60,7 @@ const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Aspiring E
 
 type Project = {
   title: string;
-  image?: { url: string };
-  images?: { url: string }[];
+  image: { url: string };
   what: string[];
   how: string[];
   result: string[];
@@ -789,13 +788,6 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
   const prev = () => setI((v) => (v - 1 + projects.length) % projects.length);
   const p = projects[i];
 
-  const images = p.images || (p.image ? [p.image] : []);
-  const [imgIdx, setImgIdx] = useState(0);
-
-  useEffect(() => {
-    setImgIdx(0);
-  }, [i]);
-
   useEffect(() => {
     if (!zoom) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setZoom(false); };
@@ -807,71 +799,17 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
     };
   }, [zoom]);
 
-  const currentImage = images[imgIdx];
-
   return (
     <div className="relative">
       <article className="grid md:grid-cols-2 gap-0 rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-        <div className="relative aspect-[4/3] md:aspect-auto bg-secondary group overflow-hidden h-full min-h-[300px]">
-          {currentImage && (
-            <button
-              type="button"
-              onClick={() => setZoom(true)}
-              className="absolute inset-0 w-full h-full cursor-zoom-in"
-              aria-label={`Enlarge ${p.title}`}
-            >
-              <img
-                src={currentImage.url}
-                alt={p.title}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </button>
-          )}
-
-          {images.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setImgIdx((v) => (v - 1 + images.length) % images.length);
-                }}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white shadow-md transition-colors z-10"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={16} />
-              </button>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setImgIdx((v) => (v + 1) % images.length);
-                }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white shadow-md transition-colors z-10"
-                aria-label="Next image"
-              >
-                <ChevronRight size={16} />
-              </button>
-
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/55 px-2.5 py-1 rounded-full backdrop-blur-xs z-10">
-                {images.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setImgIdx(idx);
-                    }}
-                    className={`h-1.5 rounded-full transition-all ${
-                      idx === imgIdx ? "w-4 bg-white" : "w-1.5 bg-white/50 hover:bg-white"
-                    }`}
-                    aria-label={`Go to image ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+        <button
+          type="button"
+          onClick={() => setZoom(true)}
+          className="relative aspect-[4/3] md:aspect-auto bg-secondary group cursor-zoom-in overflow-hidden"
+          aria-label={`Enlarge ${p.title}`}
+        >
+          <img src={p.image.url} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </button>
         <div className="p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-blueprint">
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -907,7 +845,7 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
         </div>
       </div>
 
-      {zoom && currentImage && (
+      {zoom && (
         <div
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
           onClick={() => setZoom(false)}
@@ -923,7 +861,7 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             <X size={24} />
           </button>
           <img
-            src={currentImage.url}
+            src={p.image.url}
             alt={p.title}
             onClick={(e) => e.stopPropagation()}
             className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
