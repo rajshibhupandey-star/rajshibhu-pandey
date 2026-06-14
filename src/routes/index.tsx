@@ -53,7 +53,7 @@ const NAV = [
   { id: "leadership", label: "Leadership" },
 ];
 
-const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Future Engineer", "Volunteer", "Sailor"];
+const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Aspiring Engineer", "Volunteer", "Sailor"];
 
 type Project = {
   title: string;
