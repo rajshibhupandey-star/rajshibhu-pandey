@@ -572,19 +572,33 @@ function Portfolio() {
       </Section>
 
 
-      {/* ACADEMICS & SOFTWARE */}
-      <Section id="academics" eyebrow="03 / Academics" title="Academics & Software/Skills">
+      {/* ACADEMICS & SKILLS */}
+      <Section id="academics" eyebrow="03 / Academics" title="Academics & Skills">
         <div className="grid md:grid-cols-3 gap-6">
-          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.88">
+          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.86">
             <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
               <FileText size={14} /> View Transcript
             </a>
           </Card>
-          <Card
-            title="Software/Skills"
-            body="AutoCAD, Fusion 360, ANSYS Fluent, NI LabVIEW, Microsoft Office, SOLIDWORKS, MATLAB, Python, Abaqus."
-          />
+          <div className="rounded-lg border border-border bg-card p-6 md:col-span-1">
+            <h3 className="text-lg font-semibold text-primary">Skills</h3>
+            <dl className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              {[
+                ["Programming", "Python, MATLAB"],
+                ["Design & Analysis", "SolidWorks, Fusion 360, AutoCAD, ANSYS Fluent, NI LabVIEW, Abaqus CAE"],
+                ["Manufacturing", "CNC Haas Mini Mill, Manual Mill & Lathe, Drilling, GMAW"],
+                ["Software", "Microsoft Office, Adobe Photoshop, Premiere Pro, InDesign, Notion"],
+                ["Hardware", "Circuitry, PCB Design (KiCad), Arduino"],
+                ["Languages", "Fluent: English, Hindi"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="font-semibold text-primary inline">{k}: </dt>
+                  <dd className="inline">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
           <Card
             title="Certifications"
             body="ACE CNC Machining · SOLIDWORKS CSWA · NVIDIA Fundamentals of Deep Learning."
