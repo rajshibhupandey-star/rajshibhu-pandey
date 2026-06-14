@@ -544,14 +544,14 @@ function Portfolio() {
               </p>
               <p><span className="font-semibold text-primary">Project Focus Area:</span> Conformal Frictional Latches</p>
               <p className="pt-2">
-                The click beetle is an inspirational organism because of its ability to leverage very limited
-                muscle power and distributed elastic energy storage toward exceedingly quick snap maneuvers.
-                These maneuvers can launch the beetle up from a substrate, or allow it to elude a predator.
-                The ability to perform this maneuver hinges on a frictional latch that is integrated into its
-                exoskeleton between the prothorax and mesothorax body segments. Along with collaborators, we
-                have studied the geometry of the latch and its function. Further studying and understanding
-                how geometry and friction control the latch can lead to bio-inspired mechanisms for quick
-                deployment of light structures.
+                In the Tribology Lab, I investigate Latch-Mediated Spring Actuation (LaMSA) in click beetles
+                to understand how their frictional latches store and release elastic energy. This research
+                has direct applications in designing bio-inspired mechanisms for quickly deploying light
+                structures. To study this, our team designed and built a custom friction-measuring instrument
+                powered by an Arduino-controlled stepper motor. Using high-speed cameras, I capture the
+                physical maneuvers and analyze the resulting data using strain energy equations and
+                Coulomb's law of friction. I recently presented our findings on these complex biomechanical
+                systems at the 2025 and 2026 STLE conferences.
               </p>
             </div>
             <div className="space-y-4">
