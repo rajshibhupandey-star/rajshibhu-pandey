@@ -15,20 +15,21 @@ import pEngine from "@/assets/projects/engine.jpg.asset.json";
 import pSlicer from "@/assets/projects/slicer.jpg.asset.json";
 import pProsthetic from "@/assets/projects/prosthetic.jpg.asset.json";
 import pChemistry from "@/assets/projects/chemistry.jpg.asset.json";
-import pBikeFrame1 from "@/assets/projects/bike_frame_1.png.asset.json";
-import pBikeFrame2 from "@/assets/projects/bike_frame_2.png.asset.json";
-import pTorqueArm1 from "@/assets/projects/torque_arm_1.png.asset.json";
-import pTorqueArm2 from "@/assets/projects/torque_arm_2.png.asset.json";
+import pBikeFrame from "@/assets/projects/bike_frame_combined.png.asset.json";
+import pTorqueArm from "@/assets/projects/torque_arm_combined.png.asset.json";
 import stle2025 from "@/assets/research/stle_2025.jpg.asset.json";
 import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
 import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
 import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
+import igProfile from "@/assets/instagram/ig_profile.jpeg.asset.json";
+import igGrid from "@/assets/instagram/ig_grid.jpeg.asset.json";
 
 const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
+const CV_URL = "https://drive.google.com/file/d/1hm9Ta_6QUXTTC3f-mol0WV_RdHt7Jokh/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
 const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/rajshibhu-pandey/";
@@ -47,13 +48,15 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "home", label: "Home" },
+  { id: "about", label: "About Me" },
   { id: "projects", label: "Projects & Research" },
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
+  { id: "content", label: "Content Creation" },
   { id: "leadership", label: "Leadership" },
 ];
 
-const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Future Engineer", "Volunteer", "Sailor"];
+const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Aspiring Engineer", "Volunteer", "Sailor"];
 
 type Project = {
   title: string;
@@ -67,7 +70,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     title: "Finite Element Modeling of an Aluminum Bicycle Frame",
-    images: [pBikeFrame1, pBikeFrame2],
+    image: pBikeFrame,
     what: [
       "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
       "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
@@ -84,7 +87,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "Torque-Arm FEA Design Optimization",
-    images: [pTorqueArm1, pTorqueArm2],
+    image: pTorqueArm,
     what: [
       "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
       "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
@@ -489,23 +492,31 @@ function Portfolio() {
               </a>
             </div>
             <p>
-              I am a Mechanical Engineering student at the University of Florida interested in the
-              intersection of sustainability, human-centered design, and engineering. I am currently
-              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
+              I am a 3rd year Mechanical Engineering student at the University of Florida, driven by the
+              intersection of sustainability, human-centered design, and technical innovation. Currently,
+              I serve as a researcher in the Tribology Lab under Dr. Alison C. Dunn, where I study
+              Latch-Mediated Spring Actuation (LaMSA) maneuvers in click beetles.
             </p>
             <p>
-              Throughout my time at UF I have undertaken several opportunities that have allowed me
-              to enhance my leadership and communication skills. I am also passionate about sales and
-              want to explore technical sales in the future.
+              Beyond the lab, I am deeply passionate about the human side of engineering. Through diverse
+              campus leadership roles and professional experiences, I have honed my ability to communicate
+              complex ideas to broad audiences. I am also highly curious about the intersection between
+              technical solutions and client needs and thus want to explore a career in technical sales.
             </p>
+            <div>
+              <a href={CV_URL} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-base font-semibold text-blueprint hover:underline">
+                <ExternalLink size={18} /> Click for Curriculum Vitae (CV)
+              </a>
+            </div>
           </div>
           <aside className="md:col-span-2 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">At a glance</h3>
             <dl className="mt-4 space-y-3 text-sm">
-              <Row k="Focus" v="Mechanical Engineering and AI" />
-              <Row k="Location" v="Open to relocation" />
+              <Row k="Major" v="Mechanical Engineering and AI" />
+              <Row k="Location" v="Gainesville, Florida (Open to relocation)" />
               <Row k="Interests" v="Tribology, Technical Sales, AI, Manufacturing" />
-              <Row k="Languages" v="English, Hindi, Turkish (basic)" />
+              <Row k="Languages" v="English, Hindi" />
             </dl>
           </aside>
         </div>
@@ -535,14 +546,14 @@ function Portfolio() {
               </p>
               <p><span className="font-semibold text-primary">Project Focus Area:</span> Conformal Frictional Latches</p>
               <p className="pt-2">
-                The click beetle is an inspirational organism because of its ability to leverage very limited
-                muscle power and distributed elastic energy storage toward exceedingly quick snap maneuvers.
-                These maneuvers can launch the beetle up from a substrate, or allow it to elude a predator.
-                The ability to perform this maneuver hinges on a frictional latch that is integrated into its
-                exoskeleton between the prothorax and mesothorax body segments. Along with collaborators, we
-                have studied the geometry of the latch and its function. Further studying and understanding
-                how geometry and friction control the latch can lead to bio-inspired mechanisms for quick
-                deployment of light structures.
+                In the Tribology Lab, I investigate Latch-Mediated Spring Actuation (LaMSA) in click beetles
+                to understand how their frictional latches store and release elastic energy. This research
+                has direct applications in designing bio-inspired mechanisms for quickly deploying light
+                structures. To study this, our team designed and built a custom friction-measuring instrument
+                powered by an Arduino-controlled stepper motor. Using high-speed cameras, I capture the
+                physical maneuvers and analyze the resulting data using strain energy equations and
+                Coulomb's law of friction. I recently presented our findings on these complex biomechanical
+                systems at the 2025 and 2026 STLE conferences.
               </p>
             </div>
             <div className="space-y-4">
@@ -563,19 +574,33 @@ function Portfolio() {
       </Section>
 
 
-      {/* ACADEMICS & SOFTWARE */}
-      <Section id="academics" eyebrow="03 / Academics" title="Academics & Software/Skills">
+      {/* ACADEMICS & SKILLS */}
+      <Section id="academics" eyebrow="03 / Academics" title="Academics & Skills">
         <div className="grid md:grid-cols-3 gap-6">
-          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.88">
+          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.86">
             <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
               <FileText size={14} /> View Transcript
             </a>
           </Card>
-          <Card
-            title="Software/Skills"
-            body="AutoCAD, Fusion 360, ANSYS Fluent, NI LabVIEW, Microsoft Office, SOLIDWORKS, MATLAB, Python, Abaqus."
-          />
+          <div className="rounded-lg border border-border bg-card p-6 md:col-span-1">
+            <h3 className="text-lg font-semibold text-primary">Skills</h3>
+            <dl className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              {[
+                ["Programming", "Python, MATLAB"],
+                ["Design & Analysis", "SolidWorks, Fusion 360, AutoCAD, ANSYS Fluent, NI LabVIEW, Abaqus CAE"],
+                ["Manufacturing", "CNC Haas Mini Mill, Manual Mill & Lathe, Drilling, GMAW"],
+                ["Software", "Microsoft Office, Adobe Photoshop, Premiere Pro, InDesign, Notion"],
+                ["Hardware", "Circuitry, PCB Design (KiCad), Arduino"],
+                ["Languages", "Fluent: English, Hindi"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="font-semibold text-primary inline">{k}: </dt>
+                  <dd className="inline">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
           <Card
             title="Certifications"
             body="ACE CNC Machining · SOLIDWORKS CSWA · NVIDIA Fundamentals of Deep Learning."
@@ -591,19 +616,27 @@ function Portfolio() {
               Started in Stanford, at NGF we bridge the educational equity gap by shifting
               under-resourced youth from passive AI consumers to active AI creators. We design and
               deploy project-based curricula where students learn to build and deploy functional web
-              applications using Lovable that solve real-world community problems. We have partnered
-              with Lovable and give free credits to all students.
+              applications using Lovable that solve real-world community problems.
+            </p>
+            <p>
+              We have proudly partnered with <span className="font-semibold text-primary">Lovable</span>,
+              a vibe coding platform, to provide <span className="font-semibold text-primary">100 free
+              credits</span> to every student that attends our workshops.
             </p>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
               <p className="mt-2">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
-              <p className="mt-2">Students bypass syntax bottlenecks, moving straight from problem identification to deploying functional, live software.</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
+              <p className="mt-2">
+                Students have been able to bypass the syntax bottlenecks and have been able to deploy
+                functional apps and websites to solve problems. Even students with no technical backgrounds
+                have been able to learn and use AI to build apps that solve real-world problems.
+              </p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
               <ul className="mt-2 space-y-2 list-disc pl-5">
                 <li><span className="font-semibold text-primary">Engineering Agency:</span> Shifting youth from passive technology users to autonomous developers.</li>
                 <li><span className="font-semibold text-primary">High-Leverage Tooling:</span> Teaching industry-standard AI workflows for rapid software execution.</li>
@@ -640,8 +673,50 @@ function Portfolio() {
         </div>
       </Section>
 
+      {/* CONTENT CREATION */}
+      <Section id="content" eyebrow="06 / Content Creation" title="Content Creation" muted>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-primary">
+                Digital Content Creator &amp; Study Abroad Mentor
+              </h3>
+              <p className="text-sm text-steel mt-1">Instagram Educational Platform</p>
+            </div>
+            <p>
+              I founded and manage an educational social media platform dedicated to helping students
+              from low-income backgrounds navigate the complexities of higher education. Driven by my
+              own experiences overcoming financial barriers, I provide completely free, comprehensive
+              college application support to a global audience.
+            </p>
+            <ul className="space-y-3 list-disc pl-5">
+              <li>
+                <span className="font-semibold text-primary">Reach &amp; Engagement:</span> Grew the
+                platform to 13.6K+ followers and generated over 2.5 million views through high-impact,
+                informational content.
+              </li>
+              <li>
+                <span className="font-semibold text-primary">Pro-Bono Mentorship:</span> Provide free
+                guidance on profile building, essay writing, and navigating the study abroad process.
+              </li>
+              <li>
+                <span className="font-semibold text-primary">Financial &amp; Safety Guidance:</span>{" "}
+                Actively match capable students with targeted scholarships and spread critical awareness
+                regarding international education frauds.
+              </li>
+            </ul>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <img src={igProfile.url} alt="Instagram profile @that_scholarship_guy"
+                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
+            <img src={igGrid.url} alt="Instagram content grid"
+                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
+          </div>
+        </div>
+      </Section>
+
       {/* LEADERSHIP */}
-      <Section id="leadership" eyebrow="06 / Leadership" title="Leadership" muted>
+      <Section id="leadership" eyebrow="07 / Leadership" title="Leadership">
         <ol className="relative border-l border-border ml-3 space-y-8">
           {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
             <li key={i} className="pl-6 relative">
@@ -672,19 +747,13 @@ function Portfolio() {
           ))}
         </ol>
 
-        <div className="mt-14">
-          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Content Creation</h3>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-            With 12,000+ followers and 2 million+ views, I help students online to build their
-            profile and find the right scholarships that can help them fund their education
-            either in India or abroad.
-          </p>
-        </div>
       </Section>
+
+      {/* HOBBIES — moved last after Leadership below */}
 
 
       {/* HOBBIES */}
-      <Section id="hobbies" eyebrow="07 / Hobbies" title="Hobbies & Interests">
+      <Section id="hobbies" eyebrow="08 / Hobbies" title="Hobbies & Interests">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {["Sailing", "Content Creation", "Cooking", "Photography", "Cinematography"].map((h) => (
             <div key={h} className="aspect-square rounded-lg bg-secondary border border-border flex items-end p-4 hover:border-blueprint transition-colors">
