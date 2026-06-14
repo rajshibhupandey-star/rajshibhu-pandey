@@ -671,8 +671,50 @@ function Portfolio() {
         </div>
       </Section>
 
+      {/* CONTENT CREATION */}
+      <Section id="content" eyebrow="06 / Content Creation" title="Content Creation" muted>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-primary">
+                Digital Content Creator &amp; Study Abroad Mentor
+              </h3>
+              <p className="text-sm text-steel mt-1">Instagram Educational Platform</p>
+            </div>
+            <p>
+              I founded and manage an educational social media platform dedicated to helping students
+              from low-income backgrounds navigate the complexities of higher education. Driven by my
+              own experiences overcoming financial barriers, I provide completely free, comprehensive
+              college application support to a global audience.
+            </p>
+            <ul className="space-y-3 list-disc pl-5">
+              <li>
+                <span className="font-semibold text-primary">Reach &amp; Engagement:</span> Grew the
+                platform to 13.6K+ followers and generated over 2.5 million views through high-impact,
+                informational content.
+              </li>
+              <li>
+                <span className="font-semibold text-primary">Pro-Bono Mentorship:</span> Provide free
+                guidance on profile building, essay writing, and navigating the study abroad process.
+              </li>
+              <li>
+                <span className="font-semibold text-primary">Financial &amp; Safety Guidance:</span>{" "}
+                Actively match capable students with targeted scholarships and spread critical awareness
+                regarding international education frauds.
+              </li>
+            </ul>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <img src={igProfile.url} alt="Instagram profile @that_scholarship_guy"
+                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
+            <img src={igGrid.url} alt="Instagram content grid"
+                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
+          </div>
+        </div>
+      </Section>
+
       {/* LEADERSHIP */}
-      <Section id="leadership" eyebrow="06 / Leadership" title="Leadership" muted>
+      <Section id="leadership" eyebrow="07 / Leadership" title="Leadership">
         <ol className="relative border-l border-border ml-3 space-y-8">
           {(LEADERSHIP as LeadershipEntry[]).map((l, i) => (
             <li key={i} className="pl-6 relative">
