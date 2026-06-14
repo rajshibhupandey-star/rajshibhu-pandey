@@ -67,7 +67,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     title: "Finite Element Modeling of an Aluminum Bicycle Frame",
-    images: [pBikeFrame1, pBikeFrame2],
+    image: pBikeFrame,
     what: [
       "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
       "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
@@ -84,7 +84,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "Torque-Arm FEA Design Optimization",
-    images: [pTorqueArm1, pTorqueArm2],
+    image: pTorqueArm,
     what: [
       "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
       "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
