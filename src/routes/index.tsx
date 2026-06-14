@@ -22,8 +22,8 @@ import stle2026 from "@/assets/research/stle_2026.jpg.asset.json";
 import ngfTeam from "@/assets/ngf/ngf_team.jpg.asset.json";
 import ngfGroup from "@/assets/ngf/ngf_group.jpg.asset.json";
 import ngfBroward from "@/assets/ngf/ngf_broward.jpg.asset.json";
-import igProfile from "@/assets/instagram/ig_profile.jpeg.asset.json";
-import igGrid from "@/assets/instagram/ig_grid.jpeg.asset.json";
+import insta1 from "@/assets/photos/instagram_1.jpg.asset.json";
+import insta2 from "@/assets/photos/instagram_2.jpg.asset.json";
 
 const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
@@ -612,32 +612,30 @@ function Portfolio() {
       <Section id="volunteer" eyebrow="04 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
-            <p>
+            <p className="text-base md:text-lg">
               Started in Stanford, at NGF we bridge the educational equity gap by shifting
               under-resourced youth from passive AI consumers to active AI creators. We design and
               deploy project-based curricula where students learn to build and deploy functional web
               applications using Lovable that solve real-world community problems.
             </p>
-            <p>
-              We have proudly partnered with <span className="font-semibold text-primary">Lovable</span>,
-              a vibe coding platform, to provide <span className="font-semibold text-primary">100 free
-              credits</span> to every student that attends our workshops.
-            </p>
-            <div>
-              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
-              <p className="mt-2">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
+            <div className="bg-blueprint/10 border border-blueprint/20 p-4 rounded-lg text-primary text-base leading-relaxed">
+              We have partnered with <span className="font-semibold text-blueprint">Lovable</span>, a vibe coding website, and give <span className="font-semibold text-blueprint">100 free credits</span> to all students that attend our workshops.
             </div>
             <div>
-              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
-              <p className="mt-2">
+              <p className="text-xl md:text-2xl font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
+              <p className="mt-2 text-base md:text-lg">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
+            </div>
+            <div>
+              <p className="text-xl md:text-2xl font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
+              <p className="mt-2 text-base md:text-lg">
                 Students have been able to bypass the syntax bottlenecks and have been able to deploy
                 functional apps and websites to solve problems. Even students with no technical backgrounds
-                have been able to learn and use AI to build apps that solve real-world problems.
+                have been able to learn and use AI to build apps that solve real work problems.
               </p>
             </div>
             <div>
-              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
-              <ul className="mt-2 space-y-2 list-disc pl-5">
+              <p className="text-xl md:text-2xl font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
+              <ul className="mt-2 space-y-2 list-disc pl-5 text-base md:text-lg">
                 <li><span className="font-semibold text-primary">Engineering Agency:</span> Shifting youth from passive technology users to autonomous developers.</li>
                 <li><span className="font-semibold text-primary">High-Leverage Tooling:</span> Teaching industry-standard AI workflows for rapid software execution.</li>
                 <li><span className="font-semibold text-primary">Community-First Focus:</span> Anchoring all engineering projects in solving tangible local problems.</li>
@@ -706,11 +704,11 @@ function Portfolio() {
               </li>
             </ul>
           </div>
-          <div className="grid grid-cols-1 gap-4">
-            <img src={igProfile.url} alt="Instagram profile @that_scholarship_guy"
-                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
-            <img src={igGrid.url} alt="Instagram content grid"
-                 className="w-full rounded-lg border border-border bg-card object-contain max-h-[640px]" />
+          <div className="grid grid-cols-2 gap-4">
+            <img src={insta1.url} alt="Instagram profile @that_scholarship_guy"
+                 className="w-full rounded-lg border border-border bg-card object-contain shadow-md" />
+            <img src={insta2.url} alt="Instagram content grid"
+                 className="w-full rounded-lg border border-border bg-card object-contain shadow-md" />
           </div>
         </div>
       </Section>
