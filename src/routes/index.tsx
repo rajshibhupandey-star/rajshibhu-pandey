@@ -490,23 +490,31 @@ function Portfolio() {
               </a>
             </div>
             <p>
-              I am a Mechanical Engineering student at the University of Florida interested in the
-              intersection of sustainability, human-centered design, and engineering. I am currently
-              studying LaMSA maneuvers in click beetles at the Tribology Lab under Dr. Alison C. Dunn.
+              I am a 3rd year Mechanical Engineering student at the University of Florida, driven by the
+              intersection of sustainability, human-centered design, and technical innovation. Currently,
+              I serve as a researcher in the Tribology Lab under Dr. Alison C. Dunn, where I study
+              Latch-Mediated Spring Actuation (LaMSA) maneuvers in click beetles.
             </p>
             <p>
-              Throughout my time at UF I have undertaken several opportunities that have allowed me
-              to enhance my leadership and communication skills. I am also passionate about sales and
-              want to explore technical sales in the future.
+              Beyond the lab, I am deeply passionate about the human side of engineering. Through diverse
+              campus leadership roles and professional experiences, I have honed my ability to communicate
+              complex ideas to broad audiences. I am also highly curious about the intersection between
+              technical solutions and client needs and thus want to explore a career in technical sales.
             </p>
+            <div>
+              <a href={CV_URL} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-base font-semibold text-blueprint hover:underline">
+                <ExternalLink size={18} /> Click for Curriculum Vitae (CV)
+              </a>
+            </div>
           </div>
           <aside className="md:col-span-2 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">At a glance</h3>
             <dl className="mt-4 space-y-3 text-sm">
-              <Row k="Focus" v="Mechanical Engineering and AI" />
-              <Row k="Location" v="Open to relocation" />
+              <Row k="Major" v="Mechanical Engineering and AI" />
+              <Row k="Location" v="Gainesville, Florida (Open to relocation)" />
               <Row k="Interests" v="Tribology, Technical Sales, AI, Manufacturing" />
-              <Row k="Languages" v="English, Hindi, Turkish (basic)" />
+              <Row k="Languages" v="English, Hindi" />
             </dl>
           </aside>
         </div>
