@@ -614,19 +614,27 @@ function Portfolio() {
               Started in Stanford, at NGF we bridge the educational equity gap by shifting
               under-resourced youth from passive AI consumers to active AI creators. We design and
               deploy project-based curricula where students learn to build and deploy functional web
-              applications using Lovable that solve real-world community problems. We have partnered
-              with Lovable and give free credits to all students.
+              applications using Lovable that solve real-world community problems.
+            </p>
+            <p>
+              We have proudly partnered with <span className="font-semibold text-primary">Lovable</span>,
+              a vibe coding platform, to provide <span className="font-semibold text-primary">100 free
+              credits</span> to every student that attends our workshops.
             </p>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Impact to Date</p>
               <p className="mt-2">Scaled across 5 schools (online &amp; offline), training 200+ students.</p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
-              <p className="mt-2">Students bypass syntax bottlenecks, moving straight from problem identification to deploying functional, live software.</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">The Outcome</p>
+              <p className="mt-2">
+                Students have been able to bypass the syntax bottlenecks and have been able to deploy
+                functional apps and websites to solve problems. Even students with no technical backgrounds
+                have been able to learn and use AI to build apps that solve real-world problems.
+              </p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-widest text-blueprint">Our Core Values</p>
               <ul className="mt-2 space-y-2 list-disc pl-5">
                 <li><span className="font-semibold text-primary">Engineering Agency:</span> Shifting youth from passive technology users to autonomous developers.</li>
                 <li><span className="font-semibold text-primary">High-Leverage Tooling:</span> Teaching industry-standard AI workflows for rapid software execution.</li>
