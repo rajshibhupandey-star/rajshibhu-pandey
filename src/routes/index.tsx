@@ -703,15 +703,9 @@ function Portfolio() {
           ))}
         </ol>
 
-        <div className="mt-14">
-          <h3 className="font-display text-3xl md:text-4xl uppercase text-primary">Content Creation</h3>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-            With 12,000+ followers and 2 million+ views, I help students online to build their
-            profile and find the right scholarships that can help them fund their education
-            either in India or abroad.
-          </p>
-        </div>
       </Section>
+
+      {/* HOBBIES — moved last after Leadership below */}
 
 
       {/* HOBBIES */}
