@@ -52,7 +52,7 @@ const NAV = [
   { id: "projects", label: "Projects & Research" },
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
-  { id: "content", label: "Content Creation" },
+  { id: "global-immersion", label: "Global Immersion" },
   { id: "leadership", label: "Leadership" },
 ];
 
@@ -521,6 +521,40 @@ function Portfolio() {
         </div>
       </Section>
 
+      {/* ACADEMICS & SKILLS (under About Me) */}
+      <Section id="academics" eyebrow="01b / Academics" title="Academics & Skills" muted>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.86">
+            <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
+               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
+              <FileText size={14} /> View Transcript
+            </a>
+          </Card>
+          <div className="rounded-lg border border-border bg-card p-6 md:col-span-1">
+            <h3 className="text-lg font-semibold text-primary">Skills</h3>
+            <dl className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              {[
+                ["Programming", "Python, MATLAB"],
+                ["Design & Analysis", "SolidWorks, Fusion 360, AutoCAD, ANSYS Fluent, NI LabVIEW, Abaqus CAE"],
+                ["Manufacturing", "CNC Haas Mini Mill, Manual Mill & Lathe, Drilling, GMAW"],
+                ["Software", "Microsoft Office, Adobe Photoshop, Premiere Pro, InDesign, Notion"],
+                ["Hardware", "Circuitry, PCB Design (KiCad), Arduino"],
+                ["Languages", "Fluent: English, Hindi"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="font-semibold text-primary inline">{k}: </dt>
+                  <dd className="inline">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <Card
+            title="Certifications"
+            body="ACE CNC Machining · SOLIDWORKS CSWA · NVIDIA Fundamentals of Deep Learning."
+          />
+        </div>
+      </Section>
+
       {/* PROJECTS & RESEARCH */}
       <Section id="projects" eyebrow="02 / Projects & Research" title="Projects & Research" muted>
         <div className="mb-8">
@@ -572,40 +606,6 @@ function Portfolio() {
         </div>
       </Section>
 
-
-      {/* ACADEMICS & SKILLS */}
-      <Section id="academics" eyebrow="03 / Academics" title="Academics & Skills">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.86">
-            <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
-               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
-              <FileText size={14} /> View Transcript
-            </a>
-          </Card>
-          <div className="rounded-lg border border-border bg-card p-6 md:col-span-1">
-            <h3 className="text-lg font-semibold text-primary">Skills</h3>
-            <dl className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-              {[
-                ["Programming", "Python, MATLAB"],
-                ["Design & Analysis", "SolidWorks, Fusion 360, AutoCAD, ANSYS Fluent, NI LabVIEW, Abaqus CAE"],
-                ["Manufacturing", "CNC Haas Mini Mill, Manual Mill & Lathe, Drilling, GMAW"],
-                ["Software", "Microsoft Office, Adobe Photoshop, Premiere Pro, InDesign, Notion"],
-                ["Hardware", "Circuitry, PCB Design (KiCad), Arduino"],
-                ["Languages", "Fluent: English, Hindi"],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt className="font-semibold text-primary inline">{k}: </dt>
-                  <dd className="inline">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-          <Card
-            title="Certifications"
-            body="ACE CNC Machining · SOLIDWORKS CSWA · NVIDIA Fundamentals of Deep Learning."
-          />
-        </div>
-      </Section>
 
       {/* NON-PROFIT */}
       <Section id="volunteer" eyebrow="04 / Non-Profit" title="Non-profit: Next Generation Founders" muted>
@@ -746,8 +746,23 @@ function Portfolio() {
 
       </Section>
 
-      {/* HOBBIES — moved last after Leadership below */}
-
+      {/* GLOBAL IMMERSION */}
+      <Section id="global-immersion" eyebrow="08 / Global Immersion" title="Global Immersion" muted>
+        <div className="space-y-5 text-base leading-relaxed text-muted-foreground max-w-4xl">
+          <p>
+            My perspective as an engineer has been profoundly shaped by living, studying, and
+            collaborating across borders. Growing up in India and pursuing my degree in the United
+            States, I have built the cross-cultural fluency required to communicate complex
+            technical ideas to diverse global audiences and to design solutions that are sensitive
+            to context.
+          </p>
+          <p>
+            Through international research conferences, volunteering across continents, and
+            mentoring students worldwide, I have learned that the best engineering happens when
+            local insight meets global standards.
+          </p>
+        </div>
+      </Section>
 
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="08 / Hobbies" title="Hobbies & Interests">
