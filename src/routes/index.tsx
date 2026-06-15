@@ -512,7 +512,7 @@ function Portfolio() {
           <aside className="md:col-span-2 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">At a glance</h3>
             <dl className="mt-4 space-y-3 text-sm">
-              <Row k="Major" v="Mechanical Engineering and AI" />
+              <Row k="Major" v="Mechanical Engineering" />
               <Row k="Location" v="Gainesville, Florida (Open to relocation)" />
               <Row k="Interests" v="Tribology, Technical Sales, AI, Manufacturing" />
               <Row k="Languages" v="English, Hindi" />
