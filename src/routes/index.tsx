@@ -52,7 +52,7 @@ const NAV = [
   { id: "projects", label: "Projects & Research" },
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
-  { id: "content", label: "Content Creation" },
+  { id: "global-immersion", label: "Global Immersion" },
   { id: "leadership", label: "Leadership" },
 ];
 
