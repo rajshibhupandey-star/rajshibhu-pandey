@@ -13,9 +13,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
-    prerender: {
-      crawlLinks: false,
-    },
     output: {
       dir: '.output',
       publicDir: '.output/public'

@@ -47,8 +47,8 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
+  { id: "home", label: "About Me" },
+  { id: "about", label: "CV" },
   { id: "projects", label: "Projects & Research" },
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
@@ -752,7 +752,7 @@ function Portfolio() {
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="08 / Hobbies" title="Hobbies & Interests">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {["Sailing", "Content Creation", "Cooking", "Photography", "Cinematography"].map((h) => (
+          {["Sailing", "Content Creation", "Cooking", "Photography"].map((h) => (
             <div key={h} className="aspect-square rounded-lg bg-secondary border border-border flex items-end p-4 hover:border-blueprint transition-colors">
               <span className="font-semibold text-primary">{h}</span>
             </div>
