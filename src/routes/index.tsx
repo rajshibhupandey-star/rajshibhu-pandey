@@ -752,7 +752,7 @@ function Portfolio() {
       {/* HOBBIES */}
       <Section id="hobbies" eyebrow="08 / Hobbies" title="Hobbies & Interests">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {["Sailing", "Content Creation", "Cooking", "Photography", "Cinematography"].map((h) => (
+          {["Sailing", "Content Creation", "Cooking", "Photography"].map((h) => (
             <div key={h} className="aspect-square rounded-lg bg-secondary border border-border flex items-end p-4 hover:border-blueprint transition-colors">
               <span className="font-semibold text-primary">{h}</span>
             </div>
