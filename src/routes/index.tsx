@@ -750,16 +750,7 @@ function Portfolio() {
       <Section id="global-immersion" eyebrow="08 / Global Immersion" title="Global Immersion" muted>
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground max-w-4xl">
           <p>
-            My perspective as an engineer has been profoundly shaped by living, studying, and
-            collaborating across borders. Growing up in India and pursuing my degree in the United
-            States, I have built the cross-cultural fluency required to communicate complex
-            technical ideas to diverse global audiences and to design solutions that are sensitive
-            to context.
-          </p>
-          <p>
-            Through international research conferences, volunteering across continents, and
-            mentoring students worldwide, I have learned that the best engineering happens when
-            local insight meets global standards.
+            My perspective as an engineering student has been profoundly shaped by living, studying, and collaborating in diverse global environments. Other than growing up in India and pursuing my degree in the United States, I have had experiences that have helped me develop a global perspective.
           </p>
         </div>
 
