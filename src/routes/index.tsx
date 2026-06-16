@@ -884,6 +884,12 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
           </p>
           <h3 className="mt-2 text-2xl font-semibold text-primary">{p.title}</h3>
+          {p.paperUrl && (
+            <a href={p.paperUrl} target="_blank" rel="noopener noreferrer"
+               className="mt-1 inline-block text-sm text-blueprint hover:underline">
+              Click to see the paper
+            </a>
+          )}
           <div className="mt-5 space-y-4">
             <Block label="What?" items={p.what} />
             <Block label="How?" items={p.how} />
