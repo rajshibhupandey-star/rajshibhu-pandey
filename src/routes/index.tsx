@@ -89,6 +89,7 @@ const PROJECTS: Project[] = [
   {
     title: "Torque-Arm FEA Design Optimization",
     image: pTorqueArm,
+    paperUrl: "https://drive.google.com/file/d/1XD_TQgTyCxAoZGYb3bQ67DcYNbcFElVk/view?usp=sharing",
     what: [
       "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
       "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
