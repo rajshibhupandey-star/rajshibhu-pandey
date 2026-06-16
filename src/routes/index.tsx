@@ -64,12 +64,14 @@ type Project = {
   what: string[];
   how: string[];
   result: string[];
+  paperUrl?: string;
 };
 
 const PROJECTS: Project[] = [
   {
     title: "Finite Element Modeling of an Aluminum Bicycle Frame",
     image: pBikeFrame,
+    paperUrl: "https://drive.google.com/file/d/1ww4UJo7NhOwXUVQryN80_EFJga6GhxjM/view?usp=sharing",
     what: [
       "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
       "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
@@ -87,6 +89,7 @@ const PROJECTS: Project[] = [
   {
     title: "Torque-Arm FEA Design Optimization",
     image: pTorqueArm,
+    paperUrl: "https://drive.google.com/file/d/1XD_TQgTyCxAoZGYb3bQ67DcYNbcFElVk/view?usp=sharing",
     what: [
       "Analyzed structural behavior and optimized shape of a mechanical torque-arm component under combined loading conditions.",
       "Minimized total component mass while satisfying maximum allowable stress requirements of 550 MPa."
@@ -881,6 +884,12 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             Project {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
           </p>
           <h3 className="mt-2 text-2xl font-semibold text-primary">{p.title}</h3>
+          {p.paperUrl && (
+            <a href={p.paperUrl} target="_blank" rel="noopener noreferrer"
+               className="mt-1 inline-block text-sm text-blueprint hover:underline">
+              Click to see the paper
+            </a>
+          )}
           <div className="mt-5 space-y-4">
             <Block label="What?" items={p.what} />
             <Block label="How?" items={p.how} />
