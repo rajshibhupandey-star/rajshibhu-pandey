@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ChevronDown, Menu, X, Mail, Linkedin, Github, Phone, Sun, Moon,
-  ChevronLeft, ChevronRight, ExternalLink, FileText,
+  ChevronLeft, ChevronRight, ExternalLink, FileText, GraduationCap, Ship,
 } from "lucide-react";
 import h1 from "@/assets/photos/headshot.png.asset.json";
 import h2 from "@/assets/photos/img_7037_v2.jpg.asset.json";
@@ -761,6 +761,66 @@ function Portfolio() {
             mentoring students worldwide, I have learned that the best engineering happens when
             local insight meets global standards.
           </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* UWC Card */}
+          <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm flex flex-col justify-between hover:border-blueprint transition-colors duration-300">
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded bg-blueprint/10 text-blueprint border border-blueprint/20">
+                  2021 – 2023 · IBDP Graduate
+                </span>
+                <GraduationCap className="text-blueprint h-5 w-5" />
+              </div>
+              <h3 className="text-2xl font-semibold text-primary mt-4">
+                United World Colleges (UWC)
+              </h3>
+              <div className="mt-3 text-sm italic text-blueprint/90 bg-secondary/50 border-l-2 border-blueprint p-3 rounded-r-md">
+                UWC is an international school where students from over 80 countries study and live together. I completed my IBDP from UWC from 2021-2023.
+              </div>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>
+                  For me UWC was more than an academic institution - it was a world full of young changemakers from different corners of the world living together in a bubble. It was a living, breathing experiment in what the world could look like if we chose understanding over division.
+                </p>
+                <p>
+                  As an engineering student, the most valuable lesson UWC gave me wasn't found in any textbook. When you sit with someone from rural Ghana and someone from urban Hong Kong to solve the same challenge, you quickly learn that your instinct, your "obvious" answer, is shaped entirely by where you come from. UWC also forced me to confront my own privilege. Seeing peers work twice as hard with half the resources made me understand that talent and intelligence are universally distributed — but opportunity is not.
+                </p>
+                <p>
+                  Perhaps most importantly, UWC taught me patience. Living alongside people whose entire worldview is shaped differently from yours is not always easy. There are moments of friction, of miscommunication, of frustration. But living in such an international environment I learned that when two people disagree, it is rarely because one is right and the other is wrong, it is because they are each the product of entirely different experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Semester at Sea Card */}
+          <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm flex flex-col justify-between hover:border-blueprint transition-colors duration-300">
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded bg-blueprint/10 text-blueprint border border-blueprint/20">
+                  Fall 2025 · Study Abroad
+                </span>
+                <Ship className="text-blueprint h-5 w-5" />
+              </div>
+              <h3 className="text-2xl font-semibold text-primary mt-4">
+                Semester at Sea
+              </h3>
+              <div className="mt-3 text-sm italic text-blueprint/90 bg-secondary/50 border-l-2 border-blueprint p-3 rounded-r-md">
+                Semester at Sea is a unique study abroad program where students travel across 10-12 countries in 3-4 continents while taking classes on a ship. I took part in the program in Fall 2025.
+              </div>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>
+                  If UWC taught me how to live with the world, Semester at Sea showed me the world itself. Sailing across oceans and stepping into countries across multiple continents, I witnessed humanity in its most diverse, raw, and beautiful forms. I saw infrastructure that inspired me, and I saw the absence of it that challenged me. I saw smiling faces with very little, and I saw sad faces with excess.
+                </p>
+                <p>
+                  Traveling to all these countries showed me the unfair distribution of resources, how consequences of the actions by certain countries unfairly affect others. As tomorrow's world demands more sustainable thinking, engineers can no longer afford to design in a vacuum. The climate crisis, resource inequality, and infrastructural gaps are not problems that belong to one country or one culture, the nature is shared, and everyone deserves solutions that are culturally intelligent, not just technically sound.
+                </p>
+                <p>
+                  And like every deeply international experience, it sharpened my patience in ways I didn't expect. Navigating language barriers, cultural norms, and entirely different ways of communicating taught me to slow down, to listen more than I speak, and to hold space for perspectives that don't immediately make sense to me.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
