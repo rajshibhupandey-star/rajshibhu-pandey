@@ -71,6 +71,7 @@ const PROJECTS: Project[] = [
   {
     title: "Finite Element Modeling of an Aluminum Bicycle Frame",
     image: pBikeFrame,
+    paperUrl: "https://drive.google.com/file/d/1ww4UJo7NhOwXUVQryN80_EFJga6GhxjM/view?usp=sharing",
     what: [
       "Conducted stress and buckling analysis to optimize an Aluminum bicycle frame layout.",
       "Reduced overall frame mass by optimizing individual tube diameters using a Fully Stressed Design (FSD) approach."
