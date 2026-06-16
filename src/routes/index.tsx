@@ -64,6 +64,7 @@ type Project = {
   what: string[];
   how: string[];
   result: string[];
+  paperUrl?: string;
 };
 
 const PROJECTS: Project[] = [
