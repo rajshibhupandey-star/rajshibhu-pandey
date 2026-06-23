@@ -28,7 +28,7 @@ import insta2 from "@/assets/photos/instagram_2.jpg.asset.json";
 const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
-const PORTFOLIO_URL = "https://drive.google.com/file/d/1MRHgUNuyO2Ax6Y-BtzqytNFCwrSOFHOA/view?usp=sharing";
+const PORTFOLIO_URL = "https://drive.google.com/file/d/12cS7pHfqJod1tBuXXQ21RjWAZTQGRP5V/view?usp=sharing";
 const CV_URL = "https://drive.google.com/file/d/1hm9Ta_6QUXTTC3f-mol0WV_RdHt7Jokh/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
 const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
@@ -53,7 +53,7 @@ const NAV = [
   { id: "volunteer", label: "Non-Profit" },
   { id: "experience", label: "Professional Experience" },
   { id: "global-immersion", label: "Global Immersion" },
-  { id: "leadership", label: "Leadership" },
+  { id: "content", label: "Leadership" },
 ];
 
 const NOUNS = ["Student", "Researcher", "Content Creator", "Mentor", "Aspiring Engineer", "Volunteer", "Sailor"];
