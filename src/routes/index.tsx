@@ -693,7 +693,7 @@ function Portfolio() {
             <ul className="space-y-3 list-disc pl-5">
               <li>
                 <span className="font-semibold text-primary">Reach &amp; Engagement:</span> Grew the
-                platform to 13.6K+ followers and generated over 2.5 million views through high-impact,
+                platform to 20K+ followers and generated over 3.5 million views through high-impact,
                 informational content.
               </li>
               <li>
