@@ -28,7 +28,8 @@ import insta2 from "@/assets/photos/instagram_2.jpg.asset.json";
 const HERO_PHOTOS = [h1, h2, h3, h4];
 const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
-const PORTFOLIO_URL = "https://drive.google.com/file/d/12cS7pHfqJod1tBuXXQ21RjWAZTQGRP5V/view?usp=sharing";
+import portfolioPdf from "@/assets/engineering_portfolio_2026.pdf.asset.json";
+const PORTFOLIO_URL = portfolioPdf.url;
 const CV_URL = "https://drive.google.com/file/d/1hm9Ta_6QUXTTC3f-mol0WV_RdHt7Jokh/view?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
 const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
