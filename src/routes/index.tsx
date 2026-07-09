@@ -504,7 +504,7 @@ function Portfolio() {
               Beyond the lab, I am deeply passionate about the human side of engineering. Through diverse
               campus leadership roles and professional experiences, I have honed my ability to communicate
               complex ideas to broad audiences. I am also highly curious about the intersection between
-              technical solutions and client needs and thus want to explore a career in technical sales.
+              technical solutions and client needs.
             </p>
             <div>
               <a href={CV_URL} target="_blank" rel="noopener noreferrer"
