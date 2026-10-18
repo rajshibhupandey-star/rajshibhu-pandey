@@ -617,7 +617,27 @@ function Portfolio() {
                   ))}
                 </ul>
               </div>
+              <div className="rounded-lg border border-border bg-card p-5">
+                <p className="text-xs font-bold uppercase tracking-widest text-blueprint">Publications</p>
+                <ul className="mt-3 space-y-3">
+                  {PUBLICATIONS.map((p) => (
+                    <li key={p.url}>
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-blueprint hover:underline inline-flex items-start gap-2"
+                      >
+                        <ExternalLink size={14} className="mt-0.5 shrink-0" />
+                        <span>{p.title}</span>
+                      </a>
+                      <p className="mt-1 pl-6 text-xs text-muted-foreground">{p.citation}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
           </div>
         </div>
       </Section>
