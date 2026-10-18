@@ -529,7 +529,7 @@ function Portfolio() {
       {/* ACADEMICS & SKILLS (under About Me) */}
       <Section id="academics" eyebrow="01b / Academics" title="Academics & Skills" muted>
         <div className="grid md:grid-cols-3 gap-6">
-          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.86">
+          <Card title="Major" body="Mechanical Engineering — University of Florida. GPA: 3.82">
             <a href={TRANSCRIPT_URL} target="_blank" rel="noopener noreferrer"
                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blueprint hover:underline">
               <FileText size={14} /> View Transcript
