@@ -497,7 +497,7 @@ function Portfolio() {
             <p>
               I am a 3rd year Mechanical Engineering student at the University of Florida, driven by the
               intersection of sustainability, human-centered design, and technical innovation. Currently,
-              I serve as a researcher in the Tribology Lab under Dr. Alison C. Dunn, where I study
+              I serve as a researcher in the Bio/Tribology Lab under Dr. Alison C. Dunn, where I study
               Latch-Mediated Spring Actuation (LaMSA) maneuvers in click beetles.
             </p>
             <p>
