@@ -1,4 +1,3 @@
-import cvAsset from "@/assets/raj_2026_CV.pdf.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
@@ -31,7 +30,7 @@ const NGF_PHOTOS = [ngfTeam, ngfGroup, ngfBroward];
 
 import portfolioPdf from "@/assets/engineering_portfolio_2026.pdf.asset.json";
 const PORTFOLIO_URL = portfolioPdf.url;
-const CV_URL = cvAsset.url;
+const CV_URL = "https://docs.google.com/document/d/1u6qHJWEMGGvpLyKL-GBhxKg2I-WPLgO4fHj0lQ0NVWg/edit?usp=sharing";
 const TRANSCRIPT_URL = "https://drive.google.com/file/d/1hNM6yKpboBbn7ZJZiUk4K9lZnMazo-ZA/view?usp=sharing";
 const LAB_URL = "https://faculty.eng.ufl.edu/bio-materials-tribology-laboratory/research/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/rajshibhu-pandey/";
