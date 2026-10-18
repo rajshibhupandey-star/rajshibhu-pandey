@@ -320,6 +320,17 @@ const SYMPOSIUM_POSTERS = [
   { label: "Society of Tribology and Lubricant Engineers (STLE) Conference — 2026", asset: stle2026 },
 ];
 
+const PUBLICATIONS = [
+  {
+    title:
+      "Interfacial Friction and Latch Geometry Govern Slip Initiation in a Click Beetle-Inspired Frictional Latch System",
+    citation:
+      "Bastola, N., Reuben, J., Rodriguez, K., Pandey, R., Dunn, A. C. — Tribology Letters, 2026",
+    url: "https://link.springer.com/article/10.1007/s11249-026-02208-y",
+  },
+];
+
+
 
 function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
