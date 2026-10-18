@@ -1,4 +1,4 @@
 # Roadmap
 
-- [ ] Add "Publications" section under the symposium poster section: Springer paper title + link (https://link.springer.com/article/10.1007/s11249-026-02208-y)
+- [x] Add "Publications" section under the symposium poster section: Springer paper title + link (https://link.springer.com/article/10.1007/s11249-026-02208-y)
 - [ ] Swap CV to the user's Google Doc (https://docs.google.com/document/d/1u6qHJWEMGGvpLyKL-GBhxKg2I-WPLgO4fHj0lQ0NVWg/edit) — needs Google Drive/Docs access to export as PDF, then update CV_URL
